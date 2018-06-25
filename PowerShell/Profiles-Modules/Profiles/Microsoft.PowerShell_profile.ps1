@@ -1,7 +1,7 @@
 ﻿#This is the message presented when opening Powershell
 
 Write-Host "Admin Toolbox By Taylor Lee"                                                             -Foregroundcolor Green -Backgroundcolor black
-Write-Host "Modified 06232018"                                                                       -Foregroundcolor Green -Backgroundcolor black
+Write-Host "Modified 06252018"                                                                       -Foregroundcolor Green -Backgroundcolor black
 Write-Host "Use Get-Info to see a list of Commands"                                                  -Foregroundcolor Yellow -Backgroundcolor black
 Write-Host "Use Get-Common to see a list of existing commonly used functions"                        -Foregroundcolor Yellow -Backgroundcolor black
 Write-Host "Use added functions at your own risk"                                                    -Foregroundcolor Red -Backgroundcolor black
@@ -507,42 +507,29 @@ Function Remove-OlderThan {
     <#
     .Synopsis
     By Taylor Lee
-    Modified 05212018
+    Modified 06252018
     
     .Description
-    This scripts function is to delete files and folders older than x days non-recursivley.
+    This scripts function is to delete files and folders older than x days recursivley.
     
     .Inputs
         Param (
           [Parameter(Mandatory=$true)]$Path,
-          [Parameter(Mandatory=$true)]$Daysback 
+          [Parameter(Mandatory=$true)][ValidateScript({$_ -lt 0})][int]$Daysback 
               )
     
-        Write-Host "WARNING, WWARNING, WARNING!!!"                                                                                   -Foregroundcolor red
-        Write-Host "Did you use a negative value in the Daysback parameter? If not use Ctrl + C to abort the command"                -ForegroundColor Yellow
-    
-        
         $CurrentDate = Get-Date
         $DatetoDelete = $CurrentDate.AddDays($Daysback)
         Get-ChildItem $Path | Where-Object { $_.LastWriteTime -lt $DatetoDelete } | Remove-Item -Confirm
     
-    .NOTES
-    No Prequisites
-
     .Example
-     -Path is the folder from which files will be deleted. -DaysBack sets files older than that many days back to be deleted.
-
-     Delete-OlderThan -Path "C:\Folder" -Daysback "-90" 
+     Delete-OlderThan -Path "C:\Folder" -DaysBack "-90" 
     #>
-        [CmdletBinding(SupportsShouldProcess)]
-
+    
         Param (
           [Parameter(Mandatory=$true)]$Path,
-          [Parameter(Mandatory=$true)]$Daysback 
+          [Parameter(Mandatory=$true)][ValidateScript({$_ -lt 0})][int]$Daysback 
               )
-    
-        Write-Host "WARNING, WWARNING, WARNING!!!"                                                                     -Foregroundcolor red -Backgroundcolor Black
-        Write-Host "Did you use a negative value in the Daysback parameter? If not use Ctrl + C to abort the command"  -ForegroundColor Yellow -Backgroundcolor Black
     
         $CurrentDate = Get-Date
         $DatetoDelete = $CurrentDate.AddDays($Daysback)
@@ -556,41 +543,28 @@ Function Remove-OlderThanRecursive {
     <#
     .Synopsis
     By Taylor Lee
-    Modified 05212018
+    Modified 06252018
     
     .Description
     This scripts function is to delete files and folders older than x days recursivley.
     
     .Inputs
-            Param (
           [Parameter(Mandatory=$true)]$Path,
-          [Parameter(Mandatory=$true)]$Daysback 
+          [Parameter(Mandatory=$true)][ValidateScript({$_ -lt 0})][int]$Daysback  
               )
-    
-        Write-Host "WARNING, WWARNING, WARNING!!!"                                                                                                                      -Foregroundcolor red
-        Write-Host "Did you use a negative value in the Daysback parameter? If not use Ctrl + C to abort the command"                                                   -ForegroundColor Yellow
     
         $CurrentDate = Get-Date
         $DatetoDelete = $CurrentDate.AddDays($Daysback)
         Get-ChildItem $Path -Recurse | Where-Object { $_.LastWriteTime -lt $DatetoDelete } | Remove-Item -Confirm
     
-    .NOTES
-    No Prequisites
-
     .Example
-     -Path is the folder from which files will be deleted and the subfolder of the -path. -DaysBack sets files older than that many days back to be deleted.
-
-     Delete-OlderThan -Path "C:\Folder" -Daysback "-90" 
+     Delete-OlderThan -Path "C:\Folder" -DaysBack "-90" 
     #>
-        [CmdletBinding(SupportsShouldProcess)]
-
+    
         Param (
           [Parameter(Mandatory=$true)]$Path,
-          [Parameter(Mandatory=$true)]$Daysback 
+          [Parameter(Mandatory=$true)][ValidateScript({$_ -lt 0})][int]$Daysback  
               )
-    
-        Write-Host "WARNING, WWARNING, WARNING!!!"                                                                                                                      -Foregroundcolor red
-        Write-Host "Did you use a negative value in the Daysback parameter? If not use Ctrl + C to abort the command"                                                   -ForegroundColor Yellow
     
         $CurrentDate = Get-Date
         $DatetoDelete = $CurrentDate.AddDays($Daysback)

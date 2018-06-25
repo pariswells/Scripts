@@ -13,6 +13,7 @@
 [SecureString]                                              Obfuscates the inputed parameter with asteriks (Good for Passwords)
 [Parameter(Position=1)]                                     Set the parameter prompt position and position in Show-Command
 [ValidateScript({Test-Path $_ -PathType Leaf})]             Validates the provided variable is true for the inputed script block entry (This one checks that the entered folderpath exists)
+[ValidateScript({$_ -lt 0})]                                Validates the provided variable is true for the inputed script block entry (This  checks that the entered entered value is less than 0)
 [ValidatePattern('^C:\\')]                                  Validates the entered variable matches the provided patter (This one validates the path is on the local C: Drive)
 [ValidateSet('1','2','5')]                                  Validates that the value entered for the parameter is equal to one of the specified values
 [ValidateRange('512MB','1024MB')]                           Validates the provided value is withing the specified range
