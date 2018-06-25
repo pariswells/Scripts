@@ -1,7 +1,7 @@
 #If, Elseif, and Else are used to run commands If certain statments are met
 
 
-#Simple example proves decimals can work in a string for this operation (May not be the best way to do it)
+#Simple example proves decimals can work in a string for this operation (May not be the best way to do it if not working with static values)
 Function Test-MathInString {
 
 $x="5.5"
