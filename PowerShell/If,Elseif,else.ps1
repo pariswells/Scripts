@@ -1,15 +1,16 @@
 #If, Elseif, and Else are used to run commands If certain statments are met
 
 
-#Simple example that proves decimals can be used
+#Simple example proves decimals can work in a string for this operation (May not be the best way to do it)
+Function Test-MathInString {
+
 $x="5.5"
 
 if ($x -gt '5.4') {
-echo True
+Write-Output True
 	} elseif ($x -lt '5.4') {
-echo False
+Write-Output False
 	} else {
-echo fault
+Write-Output fault
 	}
-
-
+}
