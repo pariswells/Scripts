@@ -1,7 +1,7 @@
 ﻿#This is the message presented when opening Powershell
 
 Write-Host "Admin Toolbox By Taylor Lee"                                                             -Foregroundcolor Green -Backgroundcolor black
-Write-Host "Modified 06252018"                                                                       -Foregroundcolor Green -Backgroundcolor black
+Write-Host "Modified 06262018"                                                                       -Foregroundcolor Green -Backgroundcolor black
 Write-Host "Use Get-Info to see a list of Commands"                                                  -Foregroundcolor Yellow -Backgroundcolor black
 Write-Host "Use Get-Common to see a list of existing commonly used functions"                        -Foregroundcolor Yellow -Backgroundcolor black
 Write-Host "Use added functions at your own risk"                                                    -Foregroundcolor Red -Backgroundcolor black
@@ -13,7 +13,7 @@ Function Get-Info {
     <#
     .Synopsis
     By Taylor Lee
-    Modified 06232018
+    Modified 06262018
     
     .Description
     Just a Functions list for the Powershell Profile
@@ -1019,7 +1019,11 @@ Function Disable-Sleep {
     This command disable hibernate and sleep
     
     .INPUTS
-        echo disabling standby
+        [CmdletBinding()]
+        param (     
+        )
+
+        Write-Host disabling standby -foregroundcolor green
         powercfg.exe -change -standby-timeout-ac 0
         powercfg.exe -change -standby-timeout-dc 0
         powercfg.exe -change -hibernate-timeout-ac 0
@@ -1033,7 +1037,7 @@ Function Disable-Sleep {
         param (     
         )
 
-        Write-Output disabling standby
+        Write-Host Disabling Standby -foregroundcolor green
         powercfg.exe -change -standby-timeout-ac 0
         powercfg.exe -change -standby-timeout-dc 0
         powercfg.exe -change -hibernate-timeout-ac 0
@@ -1279,7 +1283,7 @@ Function Get-Applications {
     <#
     .SYNOPSIS
     By Taylor Lee
-    Modified 05212018
+    Modified 06262018
     
     .DESCRIPTION
     List installed Applications
@@ -1288,7 +1292,7 @@ Function Get-Applications {
     .INPUTS
         Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | 
         Select-Object DisplayName, DisplayVersion, Publisher, InstallDate | 
-        Sort DisplayName | Format-Table –AutoSize
+        Sort DisplayName 
 
     .NOTES
     No Prequisites    
@@ -1299,7 +1303,7 @@ Function Get-Applications {
 
         Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | 
         Select-Object DisplayName, DisplayVersion, Publisher, InstallDate | 
-        Sort-Object DisplayName | Format-Table –AutoSize
+        Sort-Object DisplayName 
     
     }
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
