@@ -17,6 +17,7 @@
 [ValidatePattern('^C:\\')]                                  Validates the entered variable matches the provided patter (This one validates the path is on the local C: Drive)
 [ValidateSet('1','2','5')]                                  Validates that the value entered for the parameter is equal to one of the specified values
 [ValidateRange('512MB','1024MB')]                           Validates the provided value is withing the specified range
+[ValidateNotNullOrEmpty()]                                  Validates input is entered
 [ValidateCount(1,5)]                                        Validates that the number of entered items for the parameter is greater than the specified minimum and less than the specified maximum
 [parameter(ValueFromPipeline=$True)]                        Allows for values to be piped into the command
 

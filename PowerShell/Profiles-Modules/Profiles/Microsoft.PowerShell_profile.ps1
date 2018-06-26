@@ -46,12 +46,13 @@ Function Get-Info {
         Write-Host "Disable-ShakeToMinimize    ..Disables Annoying Shake to Minimize"                          -Foregroundcolor Yellow
         Write-Host "Disable-Sleep              ..Disables Hibernate and Sleep"                                 -Foregroundcolor Yellow
         Write-Host "Disable-UAC                ..Disables UAC"                                                 -Foregroundcolor Yellow
+        Write-Host "Disable-UACPrompt          ..Disabless UAC Prompting for Admins but not UAC elevation"     -Foregroundcolor Yellow
         Write-Host "Disable-Updates            ..Disables Automatic Updates"                                   -Foregroundcolor Yellow
         Write-Host "Enable-Remoting            ..Enables PSRemoting"                                           -Foregroundcolor Yellow
         Write-Host "Enable-UAC                 ..Enables UAC"                                                  -Foregroundcolor Yellow
         Write-Host "Get-Applications           ..Gets a list of installed Applications"                        -Foregroundcolor Yellow   
         Write-Host "Get-Management             ..Gets Computer Management for another endpoint"                -Foregroundcolor Yellow
-        Write-Host "Get-NetworkStatistics      ..Gets active connections and associated Netstats"              -Foregroundcolor Yellow
+        Write-Host "Get-NetworkStatistics      ..Gets active connections and associated processes"             -Foregroundcolor Yellow
         Write-Host "Remove-AppName             ..Remove application matching specified name"                   -Foregroundcolor yellow
         Write-Host "Remove-AppNameLike         ..Remove application like specified name"                       -Foregroundcolor yellow
         Write-Host "Reset-NetworkStack         ..Reset TCP/IP and Winsock"                                     -Foregroundcolor yellow
