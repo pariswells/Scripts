@@ -2601,7 +2601,7 @@ Function Get-FolderSize {
     Quckly Finds the size of a single folder
         
     .INPUTS
-    [CmdletBinding(SupportsShouldProcess)]   
+    [CmdletBinding()]   
     Param (
         [Parameter(Position=0, Mandatory = $true)]$Folder,
         [Parameter(Position=1)]$ByteSize
@@ -2635,7 +2635,7 @@ Function Get-FolderSize {
     
     #>
         
-    [CmdletBinding(SupportsShouldProcess)]   
+    [CmdletBinding()]   
     Param (
         [Parameter(Position = 0, Mandatory = $true)]$Folder,
         [Parameter(Position = 1)]$ByteSize

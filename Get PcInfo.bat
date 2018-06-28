@@ -9,9 +9,7 @@ ipconfig /all | findstr /i "Default Gateway"
 ipconfig /all | findstr /i "Servers"
 ipconfig /all | findstr /i "Physical"
 echo    .
-systeminfo|find /i "system boot time"
-systeminfo|find /i "OS Name"
-systeminfo|find /i "OS Version"
+systeminfo|findstr /c:"System Boot Time" /c:"OS Name" /c:"OS Version"
 echo    .
 WMIC BIOS GET SERIALNUMBER
 @echo
