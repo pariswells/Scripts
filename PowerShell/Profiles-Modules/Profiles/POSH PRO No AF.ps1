@@ -1,7 +1,7 @@
 ﻿#This is the message presented when opening Powershell
 
 Write-Host "Admin Toolbox By Taylor Lee"                                                             -Foregroundcolor Green -Backgroundcolor black
-Write-Host "Modified 06262018"                                                                       -Foregroundcolor Green -Backgroundcolor black
+Write-Host "Modified 06292018"                                                                       -Foregroundcolor Green -Backgroundcolor black
 Write-Host "Use Get-Info to see a list of Commands"                                                  -Foregroundcolor Yellow -Backgroundcolor black
 Write-Host "Use Get-Common to see a list of existing commonly used functions"                        -Foregroundcolor Yellow -Backgroundcolor black
 Write-Host "Use added functions at your own risk"                                                    -Foregroundcolor Red -Backgroundcolor black
@@ -13,86 +13,88 @@ Function Get-Info {
     <#
     .Synopsis
     By Taylor Lee
-    Modified 06262018
+    Modified 06292018
     
     .Description
     Just a Functions list for the Powershell Profile
     #>
     
-        Write-Host " "
-        Write-Host "Some of the commands provided require certain prerequisites."                                -Foregroundcolor Green
-        Write-Host "Use Get-Help <Command> -full to discover if any prerequisites exist for the given command"   -Foregroundcolor Green
-        Write-Host "Make sure you are using the latest version of powershell."                                   -Foregroundcolor Green
-        Write-Host "Update-Powershell will open the default browser and website for updating Powershell"         -Foregroundcolor Yellow
-        Write-Host " "
-        pause
-        Write-Host "Active Directoy Commands"                                                                  -Foregroundcolor Cyan
-        Write-Host "Disable-Account            ..Disables a specified AD Account"                              -Foregroundcolor Yellow
-        Write-Host "Enable-Account             ..Enables a specified AD Account"                               -Foregroundcolor Yellow
-        Write-Host "Get-LockedAccounts         ..Gets locked AD accounts"                                      -Foregroundcolor Yellow
-        Write-Host "Get-PasswordExpired        ..Gets AD accounts with Expired Passwords"                      -Foregroundcolor Yellow
-        Write-Host "Get-UserReport             ..Gets a Report of AD Users"                                    -Foregroundcolor Yellow
-        Write-Host "Set-Password               ..Sets an AD Password"                                          -Foregroundcolor Yellow
-        Write-Host "Unlock-Account             ..Unlocks an AD account"                                        -Foregroundcolor Yellow
-        Write-Host " "
-        Write-Host "Azure Active Directoy Commands"                                                            -Foregroundcolor Cyan
-        Write-Host "Connect-Azure              ..Connects to Azure AD"                                         -Foregroundcolor Yellow
-        Write-Host "Get-AzureHelp              ..Get's Commands for Azure AD"                                  -Foregroundcolor Yellow
-        Write-Host "Install-AzureModule        ..Installs the Azure AD Module"                                 -Foregroundcolor Yellow
-        Write-Host "Start-AzureSync            ..Starts an Azure AD and Local AD Sync"                         -Foregroundcolor Yellow
-        Write-Host " " 
-        Write-Host "Endpoint Management Commands"                                                              -Foregroundcolor Cyan
-        Write-Host "Add-LocalAdmin             ..Adds a local admin to the endpoint"                           -Foregroundcolor Yellow
-        Write-Host "Disable-ShakeToMinimize    ..Disables Annoying Shake to Minimize"                          -Foregroundcolor Yellow
-        Write-Host "Disable-Sleep              ..Disables Hibernate and Sleep"                                 -Foregroundcolor Yellow
-        Write-Host "Disable-UAC                ..Disables UAC"                                                 -Foregroundcolor Yellow
-        Write-Host "Disable-UACPrompt          ..Disabless UAC Prompting for Admins but not UAC elevation"     -Foregroundcolor Yellow
-        Write-Host "Disable-Updates            ..Disables Automatic Updates"                                   -Foregroundcolor Yellow
-        Write-Host "Enable-Remoting            ..Enables PSRemoting"                                           -Foregroundcolor Yellow
-        Write-Host "Enable-UAC                 ..Enables UAC"                                                  -Foregroundcolor Yellow
-        Write-Host "Get-Applications           ..Gets a list of installed Applications"                        -Foregroundcolor Yellow   
-        Write-Host "Get-Management             ..Gets Computer Management for another endpoint"                -Foregroundcolor Yellow
-        Write-Host "Get-NetworkStatistics      ..Gets active connections and associated processes"             -Foregroundcolor Yellow
-        Write-Host "Remove-AppName             ..Remove application matching specified name"                   -Foregroundcolor yellow
-        Write-Host "Remove-AppNameLike         ..Remove application like specified name"                       -Foregroundcolor yellow
-        Write-Host "Reset-NetworkStack         ..Reset TCP/IP and Winsock"                                     -Foregroundcolor yellow
-        Write-Host "Reset-NetworkAdapter       ..Reset Network Adapters"                                       -Foregroundcolor yellow
-        Write-Host "Restart-Endpoint           ..Restart the endpoint after X provided hours"                  -Foregroundcolor yellow
-        Write-Host " "
-        Write-Host "Exchange Commands"                                                                         -Foregroundcolor Cyan
-        Write-Host "Add-DistributionMember     ..Adds a mailbox to a Distibution Group"                        -Foregroundcolor Yellow
-        Write-Host "Get-MailLog                ..Gets a csv of mail logs"                                      -Foregroundcolor Yellow
-        Write-Host "Get-MissingDisconnected    ..Gets diconnected mailboxes missing from the mailbox database" -Foregroundcolor Yellow
-        Write-Host "Get-UserDisabledMailboxes  ..Gets mailboxes associated with disabled ad accounts"          -Foregroundcolor Yellow
-        Write-Host "Get-VirtualDirectories     ..Gets IIS virtual directories for Exchange"                    -ForegroundColor Yellow
-        Write-Host " "
-        Write-Host "Exchange Online Commands"                                                                  -Foregroundcolor Cyan
-        Write-Host "Connect-ExchangeOnline     ..Connects to Exchange Online"                                  -Foregroundcolor Yellow
-        Write-Host " "
-        Write-Host "File Commands"                                                                             -Foregroundcolor Cyan 
-        Write-Host "Get-FileOwner              ..Gets CSV of file owners for a path"                           -Foregroundcolor Yellow
-        Write-Host "Get-FolderSize             ..Gets FolderSize of a single folder quickly"                   -Foregroundcolor Yellow
-        Write-Host "Find-ComputersFiles        ..Finds queried files across 1 or more Computers"               -ForegroundColor Yellow                      
-        Write-Host "Remove-All                 ..Removes many files quickly to free up space"                  -Foregroundcolor Yellow
-        Write-host "Remove-DisabledADProfiles  ..Removes local profiles of disabled AD users"                  -Foregroundcolor Yellow
-        Write-Host "Remove-OlderThan           ..Removes folders and files older than"                         -Foregroundcolor Yellow
-        Write-Host "Remove-OlderThanRecursive  ..Removes folders and files older than"                         -Foregroundcolor Yellow
-        Write-Host "Remove-Path                ..Removes specified files and folders"                          -Foregroundcolor Yellow
-        Write-Host "Set-Permissions            ..Set permissions recursively to a path"                        -Foregroundcolor Yellow        
-        Write-Host "Set-Owner                  ..Set ownership to a path recursively for initiating account"   -Foregroundcolor Yellow
-        Write-Host " " 
-        Write-Host "Info & Help Commands"                                                                      -ForeGroundColor Cyan
-        Write-Host "Get-ADInfo                 ..Gets info on local domain"                                    -Foregroundcolor Yellow
-        Write-Host "Get-Excuse                 ..Gets ...Wasn't me"                                            -Foregroundcolor Yellow
-        Write-Host "Get-Info                   ..Gets this help list"                                          -Foregroundcolor Yellow
-        Write-Host "Get-PCInfo                 ..Gets info on targeted PC"                                     -Foregroundcolor Yellow
-        Write-Host " "
-        Write-Host "Print/er Management Commands"                                                              -Foregroundcolor Cyan
-        Write-Host "Get-Printers               ..Gets printer information"                                     -Foregroundcolor Yellow
-        Write-Host "Get-PrintManagement        ..Gets Print Management"                                        -Foregroundcolor Yellow
-        Write-Host "Remove-PrintQueue          ..Removes all print queues"                                     -Foregroundcolor Yellow 
-        Write-Host " "
-    }
+    Write-Host " "
+    Write-Host "Some of the commands provided require certain prerequisites."                                -Foregroundcolor Green
+    Write-Host "Use Get-Help <Command> -full to discover if any prerequisites exist for the given command"   -Foregroundcolor Green
+    Write-Host "Make sure you are using the latest version of powershell."                                   -Foregroundcolor Green
+    Write-Host "Update-Powershell will open the default browser and website for updating Powershell"         -Foregroundcolor Yellow
+    Write-Host " "
+    pause
+    Write-Host "Active Directoy Commands"                                                                  -Foregroundcolor Cyan
+    Write-Host "Disable-Account            ..Disables a specified AD Account"                              -Foregroundcolor Yellow
+    Write-Host "Enable-Account             ..Enables a specified AD Account"                               -Foregroundcolor Yellow
+    Write-Host "Get-EndpointReport         ..Gets a Report of AD Endpoints"                                -Foregroundcolor Yellow
+    Write-Host "Get-LockedAccounts         ..Gets locked AD accounts"                                      -Foregroundcolor Yellow
+    Write-Host "Get-PasswordExpired        ..Gets AD accounts with Expired Passwords"                      -Foregroundcolor Yellow
+    Write-Host "Get-UserReport             ..Gets a Report of AD Users"                                    -Foregroundcolor Yellow
+    Write-Host "Set-Password               ..Sets an AD Password"                                          -Foregroundcolor Yellow
+    Write-Host "Unlock-Account             ..Unlocks an AD account"                                        -Foregroundcolor Yellow
+    Write-Host " "
+    Write-Host "Azure Active Directoy Commands"                                                            -Foregroundcolor Cyan
+    Write-Host "Connect-Azure              ..Connects to Azure AD"                                         -Foregroundcolor Yellow
+    Write-Host "Get-AzureHelp              ..Get's Commands for Azure AD"                                  -Foregroundcolor Yellow
+    Write-Host "Install-AzureModule        ..Installs the Azure AD Module"                                 -Foregroundcolor Yellow
+    Write-Host "Start-AzureSync            ..Starts an Azure AD and Local AD Sync"                         -Foregroundcolor Yellow
+    Write-Host " " 
+    Write-Host "Endpoint Management Commands"                                                              -Foregroundcolor Cyan
+    Write-Host "Add-LocalAdmin             ..Adds a local admin to the endpoint"                           -Foregroundcolor Yellow
+    Write-Host "Disable-ShakeToMinimize    ..Disables Annoying Shake to Minimize"                          -Foregroundcolor Yellow
+    Write-Host "Disable-Sleep              ..Disables Hibernate and Sleep"                                 -Foregroundcolor Yellow
+    Write-Host "Disable-UAC                ..Disables UAC"                                                 -Foregroundcolor Yellow
+    Write-Host "Disable-UACPrompt          ..Disabless UAC Prompting for Admins but not UAC elevation"     -Foregroundcolor Yellow
+    Write-Host "Disable-Updates            ..Disables Automatic Updates"                                   -Foregroundcolor Yellow
+    Write-Host "Enable-Remoting            ..Enables PSRemoting"                                           -Foregroundcolor Yellow
+    Write-Host "Enable-UAC                 ..Enables UAC"                                                  -Foregroundcolor Yellow
+    Write-Host "Get-Applications           ..Gets a list of installed Applications"                        -Foregroundcolor Yellow   
+    Write-Host "Get-Management             ..Gets Computer Management for another endpoint"                -Foregroundcolor Yellow
+    Write-Host "Get-NetworkStatistics      ..Gets active connections and associated processes"             -Foregroundcolor Yellow
+    Write-Host "Remove-AppName             ..Remove application matching specified name"                   -Foregroundcolor yellow
+    Write-Host "Remove-AppNameLike         ..Remove application like specified name"                       -Foregroundcolor yellow
+    Write-Host "Reset-NetworkStack         ..Reset TCP/IP and Winsock"                                     -Foregroundcolor yellow
+    Write-Host "Reset-NetworkAdapter       ..Reset Network Adapters"                                       -Foregroundcolor yellow
+    Write-Host "Restart-Endpoint           ..Restart the endpoint after X provided hours"                  -Foregroundcolor yellow
+    Write-Host " "
+    Write-Host "Exchange Commands"                                                                         -Foregroundcolor Cyan
+    Write-Host "Add-DistributionMember     ..Adds a mailbox to a Distibution Group"                        -Foregroundcolor Yellow
+    Write-Host "Get-MailLog                ..Gets a csv of mail logs"                                      -Foregroundcolor Yellow
+    Write-Host "Get-MissingDisconnected    ..Gets diconnected mailboxes missing from the mailbox database" -Foregroundcolor Yellow
+    Write-Host "Get-UserDisabledMailboxes  ..Gets mailboxes associated with disabled ad accounts"          -Foregroundcolor Yellow
+    Write-Host "Get-VirtualDirectories     ..Gets IIS virtual directories for Exchange"                    -ForegroundColor Yellow
+    Write-Host " "
+    Write-Host "Exchange Online Commands"                                                                  -Foregroundcolor Cyan
+    Write-Host "Connect-ExchangeOnline     ..Connects to Exchange Online"                                  -Foregroundcolor Yellow
+    Write-Host " "
+    Write-Host "File Commands"                                                                             -Foregroundcolor Cyan 
+    Write-Host "Get-FileOwner              ..Gets CSV of file owners for a path"                           -Foregroundcolor Yellow
+    Write-Host "Get-FolderSize             ..Gets FolderSize of a single folder quickly"                   -Foregroundcolor Yellow
+    Write-Host "Find-ComputersFiles        ..Finds queried files across 1 or more Computers"               -ForegroundColor Yellow                      
+    Write-Host "Remove-All                 ..Removes many files quickly to free up space"                  -Foregroundcolor Yellow
+    Write-host "Remove-DisabledADProfiles  ..Removes local profiles of disabled AD users"                  -Foregroundcolor Yellow
+    Write-Host "Remove-OlderThan           ..Removes folders and files older than"                         -Foregroundcolor Yellow
+    Write-Host "Remove-OlderThanRecursive  ..Removes folders and files older than"                         -Foregroundcolor Yellow
+    Write-Host "Remove-Path                ..Removes specified files and folders"                          -Foregroundcolor Yellow
+    Write-Host "Set-Permissions            ..Set permissions recursively to a path"                        -Foregroundcolor Yellow        
+    Write-Host "Set-Owner                  ..Set ownership to a path recursively for initiating account"   -Foregroundcolor Yellow
+    Write-Host " " 
+    Write-Host "Info & Help Commands"                                                                      -ForeGroundColor Cyan
+    Write-Host "Get-ADInfo                 ..Gets info on local domain"                                    -Foregroundcolor Yellow
+    Write-Host "Get-Excuse                 ..Gets ...Wasn't me"                                            -Foregroundcolor Yellow
+    Write-Host "Get-Info                   ..Gets this help list"                                          -Foregroundcolor Yellow
+    Write-Host "Get-PCInfo                 ..Gets info on targeted PC"                                     -Foregroundcolor Yellow
+    Write-Host "Get-PublicIP               ..Gets Public Whois Info for specified address"                 -ForegroundColor Yellow
+    Write-Host " "
+    Write-Host "Print/er Management Commands"                                                              -Foregroundcolor Cyan
+    Write-Host "Get-Printers               ..Gets printer information"                                     -Foregroundcolor Yellow
+    Write-Host "Get-PrintManagement        ..Gets Print Management"                                        -Foregroundcolor Yellow
+    Write-Host "Remove-PrintQueue          ..Removes all print queues"                                     -Foregroundcolor Yellow 
+    Write-Host " "
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 <#
@@ -125,7 +127,7 @@ function Invoke-URLInDefaultBrowser {
         .NOTES
             This cmdlet has only been test on Windows 10, using edge, chrome, and firefox as default browsers.
     #>
-    
+    [CmdletBinding()]
     param
     (
         [Parameter(
@@ -136,14 +138,13 @@ function Invoke-URLInDefaultBrowser {
         [String] $URL
     )
     #Verify Format. Do not want to assume http or https so throw warning.
-    if( $URL -notmatch "http://*" -and $URL -notmatch "https://*")
-    {
+    if ( $URL -notmatch "http://*" -and $URL -notmatch "https://*") {
         Write-Warning -Message "The URL Specified is formatted incorrectly: ($URL)" 
         Write-Warning -Message "Please make sure to include the URL Protocol (http:// or https://)"
         break;
     }
     #Replace spaces with encoded space
-    $URL = $URL -replace ' ','%20'
+    $URL = $URL -replace ' ', '%20'
     
     #Get Default browser
     $DefaultSettingPath = 'HKCU:\SOFTWARE\Microsoft\Windows\Shell\Associations\UrlAssociations\http\UserChoice'
@@ -151,33 +152,29 @@ function Invoke-URLInDefaultBrowser {
     
     #Handle for Edge
     ##edge will no open with the specified shell open command in the HKCR.
-    if($DefaultBrowserName -eq 'AppXq0fevzme2pys62n3e0fbqa7peapykr8v')
-    {
+    if ($DefaultBrowserName -eq 'AppXq0fevzme2pys62n3e0fbqa7peapykr8v') {
         #Open url in edge
         Start-Process Microsoft-edge:$URL 
     }
-    else
-    {
-        try
-        {
+    else {
+        try {
             #Create PSDrive to HKEY_CLASSES_ROOT
             $null = New-PSDrive -PSProvider registry -Root 'HKEY_CLASSES_ROOT' -Name 'HKCR'
             #Get the default browser executable command/path
             $DefaultBrowserOpenCommand = (Get-Item "HKCR:\$DefaultBrowserName\shell\open\command" | Get-ItemProperty).'(default)'
-            $DefaultBrowserPath = [regex]::Match($DefaultBrowserOpenCommand,'\".+?\"')
+            $DefaultBrowserPath = [regex]::Match($DefaultBrowserOpenCommand, '\".+?\"')
             #Open URL in browser
             Start-Process -FilePath $DefaultBrowserPath -ArgumentList $URL   
         }
-        catch
-        {
+        catch {
             Throw $_.Exception
         }
-        finally
-        {
+        finally {
             #Clean up PSDrive for 'HKEY_CLASSES_ROOT
             Remove-PSDrive -Name 'HKCR'
         }
-    }}
+    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 Function Get-Common {
 
@@ -189,28 +186,28 @@ Function Get-Common {
     .Description
     Lists commonly used and already existing functions.
     #>
-        
-        param (     
-        )
+    [CmdletBinding()]
+    param (     
+    )
 
-        Write-Host " "
-        Write-Host "Active Directoy Commands"                                                                          -Foregroundcolor Cyan
-        Write-Host "Get-AdUser                          ..Get and make changes to AD Users"                            -Foregroundcolor Yellow
-        Write-Host "Get-ADGroupMember                   ..Get members of an AD Group"                                  -Foregroundcolor Yellow
-        Write-Host " "
-        Write-Host "Custom Aliases"                                                                                    -Foregroundcolor Cyan
-        Write-Host "SCM                                 ..Alias for Show-Command. Use to show parameters in a GUI"     -Foregroundcolor Yellow
-        Write-Host " "
-        Write-Host "Exchange Commands"                                                                                 -Foregroundcolor Cyan
-        Write-Host "Get-Mailbox                         ..Gets and make changes to a mailbox"                          -Foregroundcolor Yellow
-        Write-Host "Get-RecieveConnector                ..Gets the receive connectors"                                 -Foregroundcolor Yellow
-        Write-Host "Get-SendConnector                   ..Gets the send connectors"                                    -Foregroundcolor Yellow
-        Write-Host "Set-MailboxAutoReplyConfiguration   ..Set Out of Office Reply"                                     -Foregroundcolor Yellow
-        Write-Host " "
-        Write-Host "Exchange Online Commands"                                                                          -Foregroundcolor Cyan
-        Write-Host "Get-MessageTrace                    ..Gets a csv of mail logs"                                     -Foregroundcolor Yellow
-        Write-Host " "
-    }
+    Write-Host " "
+    Write-Host "Active Directoy Commands"                                                                          -Foregroundcolor Cyan
+    Write-Host "Get-AdUser                          ..Get and make changes to AD Users"                            -Foregroundcolor Yellow
+    Write-Host "Get-ADGroupMember                   ..Get members of an AD Group"                                  -Foregroundcolor Yellow
+    Write-Host " "
+    Write-Host "Custom Aliases"                                                                                    -Foregroundcolor Cyan
+    Write-Host "SCM                                 ..Alias for Show-Command. Use to show parameters in a GUI"     -Foregroundcolor Yellow
+    Write-Host " "
+    Write-Host "Exchange Commands"                                                                                 -Foregroundcolor Cyan
+    Write-Host "Get-Mailbox                         ..Gets and make changes to a mailbox"                          -Foregroundcolor Yellow
+    Write-Host "Get-RecieveConnector                ..Gets the receive connectors"                                 -Foregroundcolor Yellow
+    Write-Host "Get-SendConnector                   ..Gets the send connectors"                                    -Foregroundcolor Yellow
+    Write-Host "Set-MailboxAutoReplyConfiguration   ..Set Out of Office Reply"                                     -Foregroundcolor Yellow
+    Write-Host " "
+    Write-Host "Exchange Online Commands"                                                                          -Foregroundcolor Cyan
+    Write-Host "Get-MessageTrace                    ..Gets a csv of mail logs"                                     -Foregroundcolor Yellow
+    Write-Host " "
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Get-PCInfo {
@@ -285,57 +282,57 @@ Function Get-PCInfo {
     Get-PCinfo -computer PCName
     #>
         
-       
+    [CmdletBinding()]   
     
     #Prompts for Computer Name
-        Param (
-            $Computer
-              )
+    Param (
+        $Computer
+    )
     
     
     #Variables
-        $SystemEnclosure = get-ciminstance win32_systemenclosure -computername $computer
-        $OS = Get-CimInstance Win32_OperatingSystem -Computername $Computer
+    $SystemEnclosure = get-ciminstance win32_systemenclosure -computername $computer
+    $OS = Get-CimInstance Win32_OperatingSystem -Computername $Computer
     
     
     #Creating Hash table from variables
-        $PCInfo = @{
-            Manufacturer=$SystemEnclosure.Manufacturer
-            PCName=$OS.CSName
-            OS=$OS.Caption
-            Architecture=$OS.OSArchitecture
-            AssetTag=$systemenclosure.serialnumber;
-            OSVersion=$OS.Version
-            InstallDate=$OS.InstallDate
-            LastBootUpTime=$OS.LastBootUpTime
-        } 
+    $PCInfo = @{
+        Manufacturer   = $SystemEnclosure.Manufacturer
+        PCName         = $OS.CSName
+        OS             = $OS.Caption
+        Architecture   = $OS.OSArchitecture
+        AssetTag       = $systemenclosure.serialnumber;
+        OSVersion      = $OS.Version
+        InstallDate    = $OS.InstallDate
+        LastBootUpTime = $OS.LastBootUpTime
+    } 
     
     #Writing to Host
-        Write-host " "
-        Write-host "If not run on a Dell machine AssetTag is the Serial Number" -Foregroundcolor Yellow
-        Write-host "Computer Info" -Foregroundcolor Cyan
+    Write-host " "
+    Write-host "If not run on a Dell machine AssetTag is the Serial Number" -Foregroundcolor Yellow
+    Write-host "Computer Info" -Foregroundcolor Cyan
     
     #Display Hash Table
-        $PCInfo.getenumerator() | Sort-Object -property name | Format-Table -autosize
+    $PCInfo.getenumerator() | Sort-Object -property name | Format-Table -autosize
     
     #Writing to Host
-        Write-host "Computer Disk Info" -Foregroundcolor Cyan
+    Write-host "Computer Disk Info" -Foregroundcolor Cyan
     
     #Display Drives
-        Get-CimInstance win32_logicaldisk -filter "drivetype=3" -computer $computer |
-        Format-Table -Property DeviceID,Volumename, `
-            @{Name="SizeGB";Expression={[math]::Round($_.Size/1GB)}}, `
-            @{Name="FreeGB";Expression={[math]::Round($_.Freespace/1GB,2)}}, `
-            @{Name="PercentFree";Expression={[math]::Round(($_.Freespace/$_.size)*100,2)}}
+    Get-CimInstance win32_logicaldisk -filter "drivetype=3" -computer $computer |
+        Format-Table -Property DeviceID, Volumename, `
+    @{Name = "SizeGB"; Expression = {[math]::Round($_.Size / 1GB)}}, `
+    @{Name = "FreeGB"; Expression = {[math]::Round($_.Freespace / 1GB, 2)}}, `
+    @{Name = "PercentFree"; Expression = {[math]::Round(($_.Freespace / $_.size) * 100, 2)}}
     
     #Writing to Host
-        Write-host "Network Information" -Foregroundcolor Cyan
+    Write-host "Network Information" -Foregroundcolor Cyan
     
-        Get-CimInstance win32_networkadapterconfiguration -computer $computer | Where-Object {$_.IPAddress -ne $null} | 
-        Select-Object IPAddress,DefaultIPGateway,DNSServerSearchOrder,IPSubnet,MACAddress,Caption,DHCPEnabled,DHCPServer,DNSDomainSuffixSearchOrder | 
+    Get-CimInstance win32_networkadapterconfiguration -computer $computer | Where-Object {$_.IPAddress -ne $null} | 
+        Select-Object IPAddress, DefaultIPGateway, DNSServerSearchOrder, IPSubnet, MACAddress, Caption, DHCPEnabled, DHCPServer, DNSDomainSuffixSearchOrder | 
         Format-List
     
-    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Enable-Remoting {
@@ -349,7 +346,7 @@ Function Enable-Remoting {
     
     .Inputs
         
-        
+        [CmdletBinding()]
  
         Param (
            [Parameter(Position=0, Mandatory=$true)]$Computer,
@@ -375,23 +372,23 @@ Function Enable-Remoting {
     Enable-PSRemoting -computer PCName -username domain\username
     #>
     
-        
+    [CmdletBinding()]
  
-        Param (
-           [Parameter(Position=0, Mandatory=$true)]$Computer,
-           [Parameter(Position=1, Mandatory=$true)]$Username,
-           [Parameter(Position=2, Mandatory=$true)][SecureString]$Password
-              )
+    Param (
+        [Parameter(Position = 0, Mandatory = $true)]$Computer,
+        [Parameter(Position = 1, Mandatory = $true)]$Username,
+        [Parameter(Position = 2, Mandatory = $true)][SecureString]$Password
+    )
     
     #Enabling PSRemoting
-        psexec \\$Computer -s winrm.cmd quickconfig -q
-        psexec \\$Computer -u $Username -p $Password powershell.exe cmd /c "enable-psremoting -force"
+    psexec \\$Computer -s winrm.cmd quickconfig -q
+    psexec \\$Computer -u $Username -p $Password powershell.exe cmd /c "enable-psremoting -force"
     
     
     #Testing that PSRemoting is now enabled.
-        Write-Host "If an error is presented after this point PSRemoting wasn't enabled"       -Foregroundcolor Yellow
-        Test-WsMan $Computer
-    }
+    Write-Host "If an error is presented after this point PSRemoting wasn't enabled"       -Foregroundcolor Yellow
+    Test-WsMan $Computer
+}
     
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -406,7 +403,7 @@ Function Remove-All {
     This Command removes log files, temp files, and empties the recycle bin. Access denied errors do not indicate a failue of the script.
     
     .Inputs
-        
+        [CmdletBinding()]
         param (     
         )
         $ErrorActionPreference = 'SilentlyContinue'
@@ -429,26 +426,26 @@ Function Remove-All {
 
     The command will return many errors for files it can't access. That is not a result of the command failing.
     #>
-        
-        param (     
-        )
-        $ErrorActionPreference = 'SilentlyContinue'
+    [CmdletBinding()]
+    param (     
+    )
+    $ErrorActionPreference = 'SilentlyContinue'
 
-        Write-Host "Freeing up space. Enjoy your Coffee!" -BackgroundColor Black -ForegroundColor Green
+    Write-Host "Freeing up space. Enjoy your Coffee!" -BackgroundColor Black -ForegroundColor Green
 
-        Get-ChildItem -path "C:\windows\logs" -Include '*.logs' -Recurse -force | Remove-Item -force -Recurse
-        Get-ChildItem -path "C:\windows\logs" -Include '*.cab' -Recurse -force | Remove-Item -force -Recurse
-        Get-ChildItem -path "C:\" -Include '*.logs' -Recurse -force | Remove-Item -force -Recurse
-        Get-ChildItem -path 'c:\$recycle.bin' -Include '*' -Recurse -force | Remove-Item -force -Recurse
-        $tempfolders = @("C:\Windows\Temp\*", "C:\Windows\Prefetch\*", "C:\Documents and Settings\*\Local Settings\temp\*", "C:\Users\*\Appdata\Local\Temp\*")
-        Remove-Item $tempfolders -force -recurse
-        $tempinternetfolders = @("C:\Users\*\Appdata\Local\Temp\Microsoft\Windows\Temporary Internet Files\*", "C:\Users\*\Appdata\Local\TMicrosoft\Windows\INetCache\*", "C:\Users\*\Appdata\Local\Microsoft\Windows\Cookies\*")
-        Remove-Item $tempinternetfolders -force -recurse
-        powercfg.exe /hibernate off
-        Remove-Item c:\hiberfil.sys -force
+    Get-ChildItem -path "C:\windows\logs" -Include '*.logs' -Recurse -force | Remove-Item -force -Recurse
+    Get-ChildItem -path "C:\windows\logs" -Include '*.cab' -Recurse -force | Remove-Item -force -Recurse
+    Get-ChildItem -path "C:\" -Include '*.logs' -Recurse -force | Remove-Item -force -Recurse
+    Get-ChildItem -path 'c:\$recycle.bin' -Include '*' -Recurse -force | Remove-Item -force -Recurse
+    $tempfolders = @("C:\Windows\Temp\*", "C:\Windows\Prefetch\*", "C:\Documents and Settings\*\Local Settings\temp\*", "C:\Users\*\Appdata\Local\Temp\*")
+    Remove-Item $tempfolders -force -recurse
+    $tempinternetfolders = @("C:\Users\*\Appdata\Local\Temp\Microsoft\Windows\Temporary Internet Files\*", "C:\Users\*\Appdata\Local\TMicrosoft\Windows\INetCache\*", "C:\Users\*\Appdata\Local\Microsoft\Windows\Cookies\*")
+    Remove-Item $tempinternetfolders -force -recurse
+    powercfg.exe /hibernate off
+    Remove-Item c:\hiberfil.sys -force
 
-        $ErrorActionPreference = 'Continue'
-    }
+    $ErrorActionPreference = 'Continue'
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Remove-DisabledADProfiles {
@@ -482,25 +479,25 @@ Function Remove-DisabledADProfiles {
     .NOTES
     This command requires the ActiveDirectory Module
     #>
+    [CmdletBinding()]
+    param (     
+    )
+    Write-Host "Importing ActiveDirectory Module if present. Command will fail without it."    -Foregroundcolor Yellow
         
-        param (     
-        )
-        Write-Host "Importing ActiveDirectory Module if present. Command will fail without it."    -Foregroundcolor Yellow
-        
-        Import-Module ActiveDirectoy
+    Import-Module ActiveDirectoy
     
-        $profiles = Get-WmiObject -Class Win32_UserProfile
-        foreach ($prof in $profiles){
-            $sid = $prof.sid
-            $ADUser = Get-ADUser -Filter {SID -eq $sid}
-            if ($ADUser.enabled -eq $false){
-                #delete profile
-                "Delete $($ADUser.name)"
-                $prof.delete()
-            }   
-        }
-    
+    $profiles = Get-WmiObject -Class Win32_UserProfile
+    foreach ($prof in $profiles) {
+        $sid = $prof.sid
+        $ADUser = Get-ADUser -Filter {SID -eq $sid}
+        if ($ADUser.enabled -eq $false) {
+            #delete profile
+            "Delete $($ADUser.name)"
+            $prof.delete()
+        }   
     }
+    
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Remove-OlderThan {
@@ -527,16 +524,16 @@ Function Remove-OlderThan {
      Delete-OlderThan -Path "C:\Folder" -DaysBack "-90" 
     #>
     
-        Param (
-          [Parameter(Mandatory=$true)]$Path,
-          [Parameter(Mandatory=$true)][ValidateScript({$_ -lt 0})][int]$Daysback 
-              )
+    Param (
+        [Parameter(Mandatory = $true)]$Path,
+        [Parameter(Mandatory = $true)][ValidateScript( {$_ -lt 0})][int]$Daysback 
+    )
     
-        $CurrentDate = Get-Date
-        $DatetoDelete = $CurrentDate.AddDays($Daysback)
-        Get-ChildItem $Path | Where-Object { $_.LastWriteTime -lt $DatetoDelete } | Remove-Item -Confirm
+    $CurrentDate = Get-Date
+    $DatetoDelete = $CurrentDate.AddDays($Daysback)
+    Get-ChildItem $Path | Where-Object { $_.LastWriteTime -lt $DatetoDelete } | Remove-Item -Confirm
     
-    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Remove-OlderThanRecursive {
@@ -562,16 +559,16 @@ Function Remove-OlderThanRecursive {
      Delete-OlderThan -Path "C:\Folder" -DaysBack "-90" 
     #>
     
-        Param (
-          [Parameter(Mandatory=$true)]$Path,
-          [Parameter(Mandatory=$true)][ValidateScript({$_ -lt 0})][int]$Daysback  
-              )
+    Param (
+        [Parameter(Mandatory = $true)]$Path,
+        [Parameter(Mandatory = $true)][ValidateScript( {$_ -lt 0})][int]$Daysback  
+    )
     
-        $CurrentDate = Get-Date
-        $DatetoDelete = $CurrentDate.AddDays($Daysback)
-        Get-ChildItem $Path -Recurse | Where-Object { $_.LastWriteTime -lt $DatetoDelete } | Remove-Item -Confirm
+    $CurrentDate = Get-Date
+    $DatetoDelete = $CurrentDate.AddDays($Daysback)
+    Get-ChildItem $Path -Recurse | Where-Object { $_.LastWriteTime -lt $DatetoDelete } | Remove-Item -Confirm
     
-    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Enable-UAC {
@@ -591,13 +588,13 @@ Function Enable-UAC {
     .NOTES
     No Prequisites
     #>
-        
-        param (     
-        )
-        reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /f /v "ConsentPromptBehaviorAdmin" /t reg_dword /d 2
-        reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /f /v "EnableLUA" /t reg_dword /d 1
+    [CmdletBinding()]
+    param (     
+    )
+    reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /f /v "ConsentPromptBehaviorAdmin" /t reg_dword /d 2
+    reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /f /v "EnableLUA" /t reg_dword /d 1
     
-    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Disable-UAC {
@@ -617,14 +614,14 @@ Function Disable-UAC {
     .NOTES
     No Prequisites
     #>
-        
-        param (     
-        )  
+    [CmdletBinding()]
+    param (     
+    )  
 
-        reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /f /v "ConsentPromptBehaviorAdmin" /t reg_dword /d 0
-        reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /f /v "EnableLUA" /t reg_dword /d 0
+    reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /f /v "ConsentPromptBehaviorAdmin" /t reg_dword /d 0
+    reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /f /v "EnableLUA" /t reg_dword /d 0
     
-    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Disable-UACPrompt {
@@ -643,13 +640,13 @@ Function Disable-UACPrompt {
     .NOTES
     No Prequisites        
     #>
-        
-        param (     
-        )
+    [CmdletBinding()]
+    param (     
+    )
 
-        reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /f /v "ConsentPromptBehaviorAdmin" /t reg_dword /d 0
+    reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /f /v "ConsentPromptBehaviorAdmin" /t reg_dword /d 0
         
-    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Get-ADInfo {
@@ -676,21 +673,21 @@ Function Get-ADInfo {
     .NOTES
     Requires the Active Directory Module
     #>
-        
-        param (     
-        )
+    [CmdletBinding()]
+    param (     
+    )
 
-        Import-Module ActiveDirectory
+    Import-Module ActiveDirectory
     
-        Get-ADDomain | 
-        Select-Object Name,Forest,ChildDomains,DistinguishedName,DNSRoot,DomainMode,ReplicaDirectoryServers,InfrastructureMaster, RIDMaster, PDCEmulator |
+    Get-ADDomain | 
+        Select-Object Name, Forest, ChildDomains, DistinguishedName, DNSRoot, DomainMode, ReplicaDirectoryServers, InfrastructureMaster, RIDMaster, PDCEmulator |
         Format-List
     
-        Get-ADForest | 
+    Get-ADForest | 
         Select-Object DomainNamingMaster, SchemaMaster | 
         Format-List
     
-    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Disable-ShakeToMinimize {
@@ -709,13 +706,13 @@ Function Disable-ShakeToMinimize {
     .NOTES
     No Prequisites
     #>
-    
+    [CmdletBinding()]
     param (     
     )
 
-        reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /f /v "DisallowShaking" /t reg_dword /d 1
+    reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /f /v "DisallowShaking" /t reg_dword /d 1
     
-    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Get-FileOwner {
@@ -759,31 +756,31 @@ Function Get-FileOwner {
 
      Get-FileOwner -Path c:\users -Report c:\FileOwners.csv
     #>
-        
+    [CmdletBinding()]
    
-        PARAM (
-          [Parameter(Mandatory=$true)]$Path,
-          [Parameter(Mandatory=$true)]$Report
-              )
+    PARAM (
+        [Parameter(Mandatory = $true)]$Path,
+        [Parameter(Mandatory = $true)]$Report
+    )
     
-        $LastWrite = @{
-          Name = 'Last Write Time'
-          Expression = { $_.LastWriteTime.ToString('u') }
-        }
-        $Owner = @{
-          Name = 'File Owner'
-          Expression = { (Get-Acl $_.FullName).Owner }
-        }
-        $HostName = @{
-          Name = 'Host Name'
-          Expression = { $env:COMPUTERNAME }
-        }
-    
-        Get-ChildItem -Recurse -Path $Path | 
-                      Select-Object $HostName, $Owner, Name, Directory, $LastWrite, Length   | 
-                      Export-Csv -NoTypeInformation $Report
-    
+    $LastWrite = @{
+        Name       = 'Last Write Time'
+        Expression = { $_.LastWriteTime.ToString('u') }
     }
+    $Owner = @{
+        Name       = 'File Owner'
+        Expression = { (Get-Acl $_.FullName).Owner }
+    }
+    $HostName = @{
+        Name       = 'Host Name'
+        Expression = { $env:COMPUTERNAME }
+    }
+    
+    Get-ChildItem -Recurse -Path $Path | 
+        Select-Object $HostName, $Owner, Name, Directory, $LastWrite, Length   | 
+        Export-Csv -NoTypeInformation $Report
+    
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Set-Permissions {
@@ -815,16 +812,16 @@ Function Set-Permissions {
      Set-Permissions -Path c:\folder -Account Domain\Username
 
     #>
-        
+    [CmdletBinding()]
    
-        PARAM (
-          [Parameter(Mandatory=$true)]$Path,
-          [Parameter(Mandatory=$true)]$Account
-              )
+    PARAM (
+        [Parameter(Mandatory = $true)]$Path,
+        [Parameter(Mandatory = $true)]$Account
+    )
     
     icacls $Path /grant ""$Account":(OI)(CI)(M)" /T /C /Q
     
-    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Set-Owner {
@@ -851,15 +848,15 @@ Function Set-Owner {
     .Example
      Set-Owner -Path c:\folder
     #>
-        
+    [CmdletBinding()]
    
-        PARAM (
-          [Parameter(Mandatory=$true)]$Path
-              )
+    PARAM (
+        [Parameter(Mandatory = $true)]$Path
+    )
     
-        takeown /r /d Y /f "$Path" 
+    takeown /r /d Y /f "$Path" 
     
-    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Remove-Path {
@@ -888,16 +885,16 @@ Function Remove-Path {
 
      Remove-Path -path c:\Folder -include "*.logs"
     #>
-        
+    [CmdletBinding()]
     
-        Param (
-            [Parameter(Mandatory=$true)]$Path,
-            [Parameter(Mandatory=$true)]$Include
-              )
+    Param (
+        [Parameter(Mandatory = $true)]$Path,
+        [Parameter(Mandatory = $true)]$Include
+    )
     
-        Get-ChildItem -path "$Path" -Include "$Include" -Recurse -force | Remove-Item -force -Recurse
+    Get-ChildItem -path "$Path" -Include "$Include" -Recurse -force | Remove-Item -force -Recurse
     
-    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Remove-PrintQueue {
@@ -922,19 +919,19 @@ Function Remove-PrintQueue {
     .NOTES
     No Prequisites
     #>
-        
-        param (     
-        )
+    [CmdletBinding()]
+    param (     
+    )
 
-        $printers = Get-Printer
-        foreach ($printer in $printers) {
-            $printjobs = Get-PrintJob -PrinterObject $printer
-            foreach ($printjob in $printjobs) {
-                Remove-PrintJob -InputObject $printjob
-            }
+    $printers = Get-Printer
+    foreach ($printer in $printers) {
+        $printjobs = Get-PrintJob -PrinterObject $printer
+        foreach ($printjob in $printjobs) {
+            Remove-PrintJob -InputObject $printjob
         }
+    }
     
-    }   
+}   
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Get-Printers {
@@ -968,15 +965,15 @@ Function Get-Printers {
 
     Get-Printers -computer PCName
     #>
-    
+    [CmdletBinding()]
     
     Param (
         $computer            
-          )
+    )
         
 
-        get-ciminstance cim_printer -computer $computer | Select-Object Name, Drivername,Portname | Sort-Object name | Format-Table -autosize
-    }
+    get-ciminstance cim_printer -computer $computer | Select-Object Name, Drivername, Portname | Sort-Object name | Format-Table -autosize
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Disable-Updates {
@@ -997,15 +994,15 @@ Function Disable-Updates {
     .NOTES
     No Prequisites
     #>
-        
-        param (     
-        )
+    [CmdletBinding()]
+    param (     
+    )
 
-       reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update" /v AUOptions /t REG_DWORD /d 1 /f
-       net stop wuauserv
-       net start wuauserv
+    reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update" /v AUOptions /t REG_DWORD /d 1 /f
+    net stop wuauserv
+    net start wuauserv
     
-    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Disable-Sleep {
@@ -1019,7 +1016,7 @@ Function Disable-Sleep {
     This command disable hibernate and sleep
     
     .INPUTS
-        
+        [CmdletBinding()]
         param (     
         )
 
@@ -1033,18 +1030,18 @@ Function Disable-Sleep {
     .NOTES
     No Prequisites        
     #>
-        
-        param (     
-        )
+    [CmdletBinding()]
+    param (     
+    )
 
-        Write-Host Disabling Standby -foregroundcolor green
-        powercfg.exe -change -standby-timeout-ac 0
-        powercfg.exe -change -standby-timeout-dc 0
-        powercfg.exe -change -hibernate-timeout-ac 0
-        powercfg.exe -change -hibernate-timeout-dc 0 
-        powercfg -h off
+    Write-Host Disabling Standby -foregroundcolor green
+    powercfg.exe -change -standby-timeout-ac 0
+    powercfg.exe -change -standby-timeout-dc 0
+    powercfg.exe -change -hibernate-timeout-ac 0
+    powercfg.exe -change -hibernate-timeout-dc 0 
+    powercfg -h off
     
-    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Remove-AppName {
@@ -1072,15 +1069,15 @@ Function Remove-AppName {
 
     Remove-AppName -appname 'App Name has spaces'
     #>
-        
+    [CmdletBinding()]
     
-        Param (
-            [Parameter(Mandatory=$true)]$Appname
-              )
+    Param (
+        [Parameter(Mandatory = $true)]$Appname
+    )
     
-        wmic product where name="$Appname" call uninstall
+    wmic product where name="$Appname" call uninstall
     
-    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Remove-AppNameLike {
@@ -1109,15 +1106,15 @@ Function Remove-AppNameLike {
 
     Remove-AppName -appnamelike 'partial app name'
     #>
-        
+    [CmdletBinding()]
     
-        Param (
-            [Parameter(Mandatory=$true)]$Appnamelike
-              )
+    Param (
+        [Parameter(Mandatory = $true)]$Appnamelike
+    )
     
-        wmic product where "name like '%$Appnamelike%'" call uninstall
+    wmic product where "name like '%$Appnamelike%'" call uninstall
     
-    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Get-Excuse {
@@ -1137,14 +1134,14 @@ Function Get-Excuse {
        write-host "$ex" -Foregroundcolor Green
        Write-Host " "
     #>
-        
+    [CmdletBinding()]
     
-       $ex = (Invoke-WebRequest http://pages.cs.wisc.edu/~ballard/bofh/excuses -OutVariable excuses).content.split([Environment]::NewLine)[(get-random $excuses.content.split([Environment]::NewLine).count)]
+    $ex = (Invoke-WebRequest http://pages.cs.wisc.edu/~ballard/bofh/excuses -OutVariable excuses).content.split([Environment]::NewLine)[(get-random $excuses.content.split([Environment]::NewLine).count)]
        
-       Write-Host " "
-       write-host "$ex" -Foregroundcolor Green
-       Write-Host " "
-    }
+    Write-Host " "
+    write-host "$ex" -Foregroundcolor Green
+    Write-Host " "
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Get-LockedAccounts {
@@ -1165,15 +1162,15 @@ Function Get-LockedAccounts {
     .NOTES
     Requires the Active Directory Module.         
     #>
-        
-        param (     
-        )
+    [CmdletBinding()]
+    param (     
+    )
 
-        import-module ActiveDirectory
+    import-module ActiveDirectory
     
-        Search-ADAccount –LockedOut | Select-Object Name,SamAccountName,UserPrincipalName | Sort-Object name | Format-Table -Autosize
+    Search-ADAccount –LockedOut | Select-Object Name, SamAccountName, UserPrincipalName | Sort-Object name | Format-Table -Autosize
     
-    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Unlock-Account {
@@ -1203,17 +1200,17 @@ Function Unlock-Account {
 
     Unlock-ADAccount -identity JohnD
     #>
-        
+    [CmdletBinding()]
             
-        Param (
-            [Parameter(Mandatory=$true)]$Username
-              )
+    Param (
+        [Parameter(Mandatory = $true)]$Username
+    )
     
-        Import-Module ActiveDirectory
+    Import-Module ActiveDirectory
     
-        Unlock-ADAccount -identity $username
+    Unlock-ADAccount -identity $username
     
-    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Get-PasswordExpired {
@@ -1234,15 +1231,15 @@ Function Get-PasswordExpired {
     
         Search-ADAccount -PasswordExpired | Select name | Sort name | fl
     #>
-        
-        param (     
-        )
+    [CmdletBinding()]
+    param (     
+    )
     
-        import-module ActiveDirectory
+    import-module ActiveDirectory
     
-        Search-ADAccount -PasswordExpired | Select-Object name | Sort-Object name | Format-List
+    Search-ADAccount -PasswordExpired | Select-Object name | Sort-Object name | Format-List
     
-    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Get-Management {
@@ -1267,15 +1264,15 @@ Function Get-Management {
     
         compmgmt.msc /computer:$computer
     #>
-        
+    [CmdletBinding()]
     
-        Param (
-            [Parameter(Mandatory=$true)]$computer
-              )
+    Param (
+        [Parameter(Mandatory = $true)]$computer
+    )
     
-        compmgmt.msc /computer:$computer
+    compmgmt.msc /computer:$computer
     
-    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Get-Applications {
@@ -1297,15 +1294,15 @@ Function Get-Applications {
     .NOTES
     No Prequisites    
     #>
-        
-        param (     
-        )
+    [CmdletBinding()]
+    param (     
+    )
 
-        Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | 
+    Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | 
         Select-Object DisplayName, DisplayVersion, Publisher, InstallDate | 
         Sort-Object DisplayName 
     
-    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Get-UserReport {
@@ -1328,7 +1325,7 @@ Function Get-UserReport {
     
         get-aduser -Filter * -properties * | 
         Select CN,DistinguishedName,SamAccountName,Modified,PasswordLastSet,PasswordNeverExpires,LockedOut,LastBadPasswordAttempt,BadLogonCount,Created,EmailAddress,{$_.proxyAddresses},mailNickname,Enabled,HomeDirectory,HomeDrive |
-        Export-CSV $Path
+        Export-CSV $Path -NoTypeInformation
     
     .NOTES
     Requires Active Directory Module
@@ -1338,19 +1335,19 @@ Function Get-UserReport {
 
     Get-UserReport -path C:\UserReport.csv
     #>
-        
+    [CmdletBinding()]
           
-        Param (
-            [Parameter(Mandatory=$true)]$Path
-              )
+    Param (
+        [Parameter(Mandatory = $true)]$Path
+    )
     
-        Import-Module ActiveDirectory 
+    Import-Module ActiveDirectory 
     
-        get-aduser -Filter * -properties * | 
-        Select-Object CN,DistinguishedName,SamAccountName,Modified,PasswordLastSet,PasswordNeverExpires,LockedOut,LastBadPasswordAttempt,BadLogonCount,Created,EmailAddress,{$_.proxyAddresses},mailNickname,Enabled,HomeDirectory,HomeDrive |
-        Export-CSV $Path
+    get-aduser -Filter * -properties * | 
+        Select-Object CN, DistinguishedName, SamAccountName, Modified, PasswordLastSet, PasswordNeverExpires, LockedOut, LastBadPasswordAttempt, BadLogonCount, Created, EmailAddress, {$_.proxyAddresses}, mailNickname, Enabled, HomeDirectory, HomeDrive |
+        Export-CSV $Path -NoTypeInformation
     
-    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Disable-Account {
@@ -1390,16 +1387,16 @@ Function Disable-Account {
 
     Disable-ADAccount -Account Patti.Fuller@FABRIKAM.com -Confirm
     #>
-        
+    [CmdletBinding()]
     
-        Param (
-            [Parameter(Mandatory=$true)]$Account
-              )
+    Param (
+        [Parameter(Mandatory = $true)]$Account
+    )
     
-        Import-Module ActiveDirectory
+    Import-Module ActiveDirectory
     
-        Disable-ADAccount -Identity $Account -Confirm
-    }
+    Disable-ADAccount -Identity $Account -Confirm
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Enable-Account {
@@ -1439,16 +1436,16 @@ Function Enable-Account {
 
     Enable-ADAccount -Account Patti.Fuller@FABRIKAM.com -Confirm
     #>
-        
+    [CmdletBinding()]
     
-        Param (
-            [Parameter(Mandatory=$true)]$Account
-              )
+    Param (
+        [Parameter(Mandatory = $true)]$Account
+    )
     
-        Import-Module ActiveDirectory
+    Import-Module ActiveDirectory
     
-        Enable-ADAccount -Identity $Account -Confirm
-    }
+    Enable-ADAccount -Identity $Account -Confirm
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Get-PrintManagement {
@@ -1468,12 +1465,12 @@ Function Get-PrintManagement {
     .NOTES
     No Prequisites        
     #>
-        
-        param (     
-        )
-        printmanagement.msc
+    [CmdletBinding()]
+    param (     
+    )
+    printmanagement.msc
     
-    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Connect-Azure {
@@ -1495,15 +1492,15 @@ Function Connect-Azure {
     .NOTES
     Requires the Module for Azure Active Directory be installed. Can be run from the regular Powershell Console.        
     #>
-        
-        param (     
-        )
+    [CmdletBinding()]
+    param (     
+    )
 
-        Write-Host "The Execuiton Policy you have set must allow for scripts to be run."     -Foregroundcolor Green
-        Write-Host "Use {Set-ExecutionPolicy remotesigned} if you're unsure."                -Foregroundcolor Green
+    Write-Host "The Execuiton Policy you have set must allow for scripts to be run."     -Foregroundcolor Green
+    Write-Host "Use {Set-ExecutionPolicy remotesigned} if you're unsure."                -Foregroundcolor Green
           
-        Connect-MsolService  
-    }
+    Connect-MsolService  
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
     
 Function Install-AzureModule {
@@ -1522,12 +1519,12 @@ Function Install-AzureModule {
     .NOTES
     No Prequisites    
     #>
-        
-        param (     
-        ) 
+    [CmdletBinding()]
+    param (     
+    ) 
 
-        Install-Module MSOnline    
-    }
+    Install-Module MSOnline    
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
     
 Function Get-AzureHelp {
@@ -1546,12 +1543,12 @@ Function Get-AzureHelp {
     .NOTES
     Requires the Azure Active Directory Module    
     #>
-        
-        param (     
-        )
+    [CmdletBinding()]
+    param (     
+    )
 
-        Get-Command *Msol* | Sort-Object Name    
-    }
+    Get-Command *Msol* | Sort-Object Name    
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Start-AzureSync {
@@ -1586,14 +1583,14 @@ Function Start-AzureSync {
     
     
     #>
-        
+    [CmdletBinding()]
             
-        Param (
-          [Parameter(Mandatory=$true)]$Policy
-              )
+    Param (
+        [Parameter(Mandatory = $true)]$Policy
+    )
               
-        Start-ADSyncSyncCycle -PolicyType $Policy    
-    }
+    Start-ADSyncSyncCycle -PolicyType $Policy    
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Connect-ExchangeOnline {
@@ -1628,18 +1625,18 @@ Function Connect-ExchangeOnline {
     .Link
     https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell?view=exchange-ps
     #>
+    [CmdletBinding()]
         
-        
-        Param (
-              )
+    Param (
+    )
      
-        Write-Host "Did you run this command from the Exchange Online Module. If not check help for this command"                -Foregroundcolor Yellow
-        Write-Host "The Execuiton Policy you have set must allow for scripts to be run."                                         -Foregroundcolor Green
-        Write-Host "Use {Set-ExecutionPolicy remotesigned} if you're unsure."                                                    -Foregroundcolor Green
+    Write-Host "Did you run this command from the Exchange Online Module. If not check help for this command"                -Foregroundcolor Yellow
+    Write-Host "The Execuiton Policy you have set must allow for scripts to be run."                                         -Foregroundcolor Green
+    Write-Host "Use {Set-ExecutionPolicy remotesigned} if you're unsure."                                                    -Foregroundcolor Green
     
-        Connect-EXOPSSession
+    Connect-EXOPSSession
       
-    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Set-Password {
@@ -1678,25 +1675,26 @@ Function Set-Password {
 
     Set-Password -username domain\username
     #>
-        
+    [CmdletBinding()]
    
-        Param (
-          [Parameter(Mandatory=$true)]$Username,
-          [Parameter(Mandatory=$true)][SecureString]$Password
-              )
+    Param (
+        [Parameter(Mandatory = $true)]$Username,
+        [Parameter(Mandatory = $true)][SecureString]$Password
+    )
     
-        Import-Module ActiveDirectory
+    Import-Module ActiveDirectory
       
-        Set-ADAccountPassword -identity $username -Reset -NewPassword $Password 
+    Set-ADAccountPassword -identity $username -Reset -NewPassword $Password 
     
-        $Prompt = Read-Host "Require a Password Change? Type Yes or No."
+    $Prompt = Read-Host "Require a Password Change? Type Yes or No."
     
-            if ($Prompt -eq 'Yes') {
+    if ($Prompt -eq 'Yes') {
         Set-ADUser -Identity $Username -ChangePasswordAtLogon $true
-            } else {
-        Write-Host " "
-            }
     }
+    else {
+        Write-Host " "
+    }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Add-DistributionMember {
@@ -1735,15 +1733,15 @@ Function Add-DistributionMember {
         
     Add-DistributionMember -Mailbox JohnD@company.com -DistributionGroup "All Employees,Worker Bees"
     #>
-        
+    [CmdletBinding()]
             
-        Param (
-              [Parameter(Mandatory=$true)]$Mailbox,
-              [Parameter(Mandatory=$true)]$DistribuitonGroup
-               )
+    Param (
+        [Parameter(Mandatory = $true)]$Mailbox,
+        [Parameter(Mandatory = $true)]$DistribuitonGroup
+    )
                 
-        Get-Mailbox -identity $Mailbox | add-distributiongroupmember -identity $DistribuitonGroup
-    }
+    Get-Mailbox -identity $Mailbox | add-distributiongroupmember -identity $DistribuitonGroup
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Get-UserDisabledMailboxes {
@@ -1771,14 +1769,14 @@ Function Get-UserDisabledMailboxes {
 
     Get-UserDisabledMailboxes -path c:\filename.csv
     #>
-        
+    [CmdletBinding()]
       
-        Param (
-            [Parameter(Mandatory=$true)]$Path
-              )
+    Param (
+        [Parameter(Mandatory = $true)]$Path
+    )
             
-        Get-User -RecipientTypeDetails UserMailbox | Where-Object {$_.UseraccountControl -like “*accountdisabled*”} | Export-Csv $Path
-    }
+    Get-User -RecipientTypeDetails UserMailbox | Where-Object {$_.UseraccountControl -like “*accountdisabled*”} | Export-Csv $Path
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
   
 Function Get-MissingDisconnected {
@@ -1797,12 +1795,12 @@ Function Get-MissingDisconnected {
     .NOTES
     Requires the microsoft exchange module.    
     #>
-        
-        param (     
-        )
+    [CmdletBinding()]
+    param (     
+    )
 
-        Get-MailboxDatabase | Clean-MailboxDatabase
-    }
+    Get-MailboxDatabase | Clean-MailboxDatabase
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Get-VirtualDirectories {
@@ -1828,25 +1826,25 @@ Function Get-VirtualDirectories {
         Get-OABvirtualDirectory | Format-List internalurl,externalurl
     #>
 
-        
-        param (     
-        )
+    [CmdletBinding()]
+    param (     
+    )
 
-        Write-Host "Powershell Virtual Directory"   -Foregroundcolor Green
-        Get-PowerShellVirtualDirectory | Format-List internalurl,externalurl
-        Write-Host "Active-Sync Virtual Directory"  -Foregroundcolor Green
-        Get-ActiveSyncVirtualDirectory | Format-List internalurl,externalurl
-        Write-Host "Web Services Virtual Directory"    -Foregroundcolor Green
-        Get-WebServicesVirtualDirectory | Format-List internalurl,externalurl
-        Write-Host "OWA Virtual Directory"    -Foregroundcolor Green
-        Get-OwaVirtualDirectory | Format-List internalurl,externalurl
-        Write-Host "AutoDiscover Virtual Directory"   -Foregroundcolor Green
-        Get-AutodiscoverVirtualDirectory | Format-List internalurl,externalurl
-        Write-Host "ECP Virtual Directory"    -Foregroundcolor Green
-        Get-EcpVirtualDirectory | Format-List internalurl,externalurl
-        Write-Host "OAB Virtual Directory"    -Foregroundcolor Green
-        Get-OABvirtualDirectory | Format-List internalurl,externalurl
-    }
+    Write-Host "Powershell Virtual Directory"   -Foregroundcolor Green
+    Get-PowerShellVirtualDirectory | Format-List internalurl, externalurl
+    Write-Host "Active-Sync Virtual Directory"  -Foregroundcolor Green
+    Get-ActiveSyncVirtualDirectory | Format-List internalurl, externalurl
+    Write-Host "Web Services Virtual Directory"    -Foregroundcolor Green
+    Get-WebServicesVirtualDirectory | Format-List internalurl, externalurl
+    Write-Host "OWA Virtual Directory"    -Foregroundcolor Green
+    Get-OwaVirtualDirectory | Format-List internalurl, externalurl
+    Write-Host "AutoDiscover Virtual Directory"   -Foregroundcolor Green
+    Get-AutodiscoverVirtualDirectory | Format-List internalurl, externalurl
+    Write-Host "ECP Virtual Directory"    -Foregroundcolor Green
+    Get-EcpVirtualDirectory | Format-List internalurl, externalurl
+    Write-Host "OAB Virtual Directory"    -Foregroundcolor Green
+    Get-OABvirtualDirectory | Format-List internalurl, externalurl
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Add-DistributionMember {
@@ -1885,21 +1883,21 @@ Function Add-DistributionMember {
         
     Add-DistributionMember -Mailbox JohnD@company.com -DistributionGroup "All Employees,Worker Bees"
     #>
-        
+    [CmdletBinding()]
                 
-        Param (
-              [Parameter(Mandatory=$true)]$Mailbox,
-              [Parameter(Mandatory=$true)]$DistribuitonGroup
-               )
+    Param (
+        [Parameter(Mandatory = $true)]$Mailbox,
+        [Parameter(Mandatory = $true)]$DistribuitonGroup
+    )
                 
-        Get-Mailbox -identity $Mailbox | add-distributiongroupmember -identity $DistribuitonGroup
-    }
+    Get-Mailbox -identity $Mailbox | add-distributiongroupmember -identity $DistribuitonGroup
+}
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Get-MailLog {
 
-        <#
+    <#
         .SYNOPSIS
         By Taylor Lee
         Modified 06072018
@@ -1930,19 +1928,19 @@ Function Get-MailLog {
         Get-MailLog -StartDate 05/14/2017 -EndDate 05/14/2018 -ExportPath C:\MailLog.CSV
     
         #>
-            
+    [CmdletBinding()]
              
-            Param (
-              [Parameter(Mandatory=$true)]$StartDate,
-              [Parameter(Mandatory=$true)]$EndDate,
-              [Parameter(Mandatory=$true)]$ExportPath,
-              [Parameter(Mandatory=$true)]$ResultSize
-                  )
+    Param (
+        [Parameter(Mandatory = $true)]$StartDate,
+        [Parameter(Mandatory = $true)]$EndDate,
+        [Parameter(Mandatory = $true)]$ExportPath,
+        [Parameter(Mandatory = $true)]$ResultSize
+    )
           
-            Get-MessageTrackingLog -Start "$StartDate" -End "$EndDate" -ResultSize $ResultSize | 
-            Select-Object Timestamp,Sender,{$_.Recipients},Directionality,MessageSubject,Source,EventID,TotalBytes,SourceContext,ServerIP,ClientHostName | 
-            Export-Csv -path $ExportPath 
-    }
+    Get-MessageTrackingLog -Start "$StartDate" -End "$EndDate" -ResultSize $ResultSize | 
+        Select-Object Timestamp, Sender, {$_.Recipients}, Directionality, MessageSubject, Source, EventID, TotalBytes, SourceContext, ServerIP, ClientHostName | 
+        Export-Csv -path $ExportPath 
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Reset-NetworkStack {
@@ -1965,16 +1963,16 @@ Function Reset-NetworkStack {
     .NOTES
     No Prequisites
     #>
-        
-        param (     
-        )
+    [CmdletBinding()]
+    param (     
+    )
 
     netsh winsock reset
     netsh int ip reset
     netsh int ipv4 reset reset.log
     netsh int ipv6 reset reset.log
     Write-Host "You need to restart the computer now"  -foregroundcolor yellow
- }
+}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Reset-NetworkAdapter {
@@ -1996,15 +1994,15 @@ Function Reset-NetworkAdapter {
     .NOTES
     No Prequisites
     #>
-        
-        param (     
-        )
+    [CmdletBinding()]
+    param (     
+    )
 
     netsh interface set interface LocalAreaConnection admin=disable
     netsh interface set interface LocalAreaConnection admin=enable
     netsh interface set interface wi-fi admin=disable
     netsh interface set interface wi-fi admin=enable
- }    
+}    
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Function Add-LocalAdmin {
@@ -2033,15 +2031,15 @@ Function Add-LocalAdmin {
 
     Add-LocalAdmin -user domain\user
     #>
-        
+    [CmdletBinding()]
    
-        Param (
-          [Parameter(Mandatory=$true)]$user
-              )
+    Param (
+        [Parameter(Mandatory = $true)]$user
+    )
       
-        Net Localgroup Administrators $user /add
+    Net Localgroup Administrators $user /add
       
- } 
+} 
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -2096,16 +2094,16 @@ Function Restart-Endpoint {
     Restarts the Endpoint in 15 minutes.
     #>
     
-        
+    [CmdletBinding()]
      
-        Param (
-          [Parameter(Mandatory=$true)]$Hours
-              )
+    Param (
+        [Parameter(Mandatory = $true)]$Hours
+    )
         
-        $Hoursmultiplied=$Hours*3600
+    $Hoursmultiplied = $Hours * 3600
 
-        Shutdown /r /t $Hoursmultiplied
-    }
+    Shutdown /r /t $Hoursmultiplied
+}
  
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -2123,13 +2121,13 @@ Function Update-Powershell {
     Invoke-URLInDefaultBrowser -URL https://www.microsoft.com/en-us/download/details.aspx?id=54616 
     #>
     
-        
-        param (     
-        )
+    [CmdletBinding()]
+    param (     
+    )
       
-        Invoke-URLInDefaultBrowser -URL https://www.microsoft.com/en-us/download/details.aspx?id=54616
+    Invoke-URLInDefaultBrowser -URL https://www.microsoft.com/en-us/download/details.aspx?id=54616
       
-    }
+}
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -2226,29 +2224,29 @@ function Get-NetworkStatistics {
     .LINK
         http://gallery.technet.microsoft.com/scriptcenter/Get-NetworkStatistics-66057d71
     #>	
-	[OutputType('System.Management.Automation.PSObject')]
-	
-	param(
+    [OutputType('System.Management.Automation.PSObject')]
+    [CmdletBinding()]
+    param(
 		
-		[Parameter(Position=0)]
-		[System.String]$ProcessName='*',
+        [Parameter(Position = 0)]
+        [System.String]$ProcessName = '*',
 		
-		[Parameter(Position=1)]
-		[System.String]$Address='*',		
+        [Parameter(Position = 1)]
+        [System.String]$Address = '*',		
 		
-		[Parameter(Position=2)]
-		$Port='*',
+        [Parameter(Position = 2)]
+        $Port = '*',
 
-		[Parameter(Position=3,
-                   ValueFromPipeline = $True,
-                   ValueFromPipelineByPropertyName = $True)]
-        [System.String[]]$ComputerName=$env:COMPUTERNAME,
+        [Parameter(Position = 3,
+            ValueFromPipeline = $True,
+            ValueFromPipelineByPropertyName = $True)]
+        [System.String[]]$ComputerName = $env:COMPUTERNAME,
 
-		[ValidateSet('*','tcp','udp')]
-		[System.String]$Protocol='*',
+        [ValidateSet('*', 'tcp', 'udp')]
+        [System.String]$Protocol = '*',
 
-		[ValidateSet('*','Closed','Close_Wait','Closing','Delete_Tcb','DeleteTcb','Established','Fin_Wait_1','Fin_Wait_2','Last_Ack','Listening','Syn_Received','Syn_Sent','Time_Wait','Unknown')]
-		[System.String]$State='*',
+        [ValidateSet('*', 'Closed', 'Close_Wait', 'Closing', 'Delete_Tcb', 'DeleteTcb', 'Established', 'Fin_Wait_1', 'Fin_Wait_2', 'Last_Ack', 'Listening', 'Syn_Received', 'Syn_Sent', 'Time_Wait', 'Unknown')]
+        [System.String]$State = '*',
 
         [switch]$ShowHostnames,
         
@@ -2256,25 +2254,25 @@ function Get-NetworkStatistics {
 
         [System.String]$TempFile = "C:\netstat.txt",
 
-        [validateset('*','IPv4','IPv6')]
+        [validateset('*', 'IPv4', 'IPv6')]
         [string]$AddressFamily = '*'
-	)
+    )
     
-	begin{
+    begin {
         #Define properties
-            $properties = 'ComputerName','Protocol','LocalAddress','LocalPort','RemoteAddress','RemotePort','State','ProcessName','PID'
+        $properties = 'ComputerName', 'Protocol', 'LocalAddress', 'LocalPort', 'RemoteAddress', 'RemotePort', 'State', 'ProcessName', 'PID'
 
         #store hostnames in array for quick lookup
-            $dnsCache = @{}
+        $dnsCache = @{}
             
-	}
+    }
 	
-	process{
+    process {
 
-        foreach($Computer in $ComputerName) {
+        foreach ($Computer in $ComputerName) {
 
             #Collect processes
-            if($ShowProcessNames){
+            if ($ShowProcessNames) {
                 Try {
                     $processes = Get-Process -ComputerName $Computer -ErrorAction stop | Select-Object name, id
                 }
@@ -2285,233 +2283,231 @@ function Get-NetworkStatistics {
             }
 	    
             #Handle remote systems
-                if($Computer -ne $env:COMPUTERNAME){
+            if ($Computer -ne $env:COMPUTERNAME) {
 
-                    #define command
-                        [string]$cmd = "cmd /c c:\windows\system32\netstat.exe -ano >> $tempFile"
+                #define command
+                [string]$cmd = "cmd /c c:\windows\system32\netstat.exe -ano >> $tempFile"
             
-                    #define remote file path - computername, drive, folder path
-                        $remoteTempFile = "\\{0}\{1}`${2}" -f "$Computer", (split-path $tempFile -qualifier).TrimEnd(":"), (Split-Path $tempFile -noqualifier)
+                #define remote file path - computername, drive, folder path
+                $remoteTempFile = "\\{0}\{1}`${2}" -f "$Computer", (split-path $tempFile -qualifier).TrimEnd(":"), (Split-Path $tempFile -noqualifier)
 
-                    #delete previous results
-                        Try{
-                            $null = Invoke-WmiMethod -class Win32_process -name Create -ArgumentList "cmd /c del $tempFile" -ComputerName $Computer -ErrorAction stop
-                        }
-                        Catch{
-                            Write-Warning "Could not invoke create win32_process on $Computer to delete $tempfile"
-                        }
+                #delete previous results
+                Try {
+                    $null = Invoke-WmiMethod -class Win32_process -name Create -ArgumentList "cmd /c del $tempFile" -ComputerName $Computer -ErrorAction stop
+                }
+                Catch {
+                    Write-Warning "Could not invoke create win32_process on $Computer to delete $tempfile"
+                }
 
-                    #run command
-                        Try{
-                            $processID = (Invoke-WmiMethod -class Win32_process -name Create -ArgumentList $cmd -ComputerName $Computer -ErrorAction stop).processid
-                        }
-                        Catch{
-                            #If we didn't run netstat, break everything off
-                            Throw $_
-                            Break
-                        }
+                #run command
+                Try {
+                    $processID = (Invoke-WmiMethod -class Win32_process -name Create -ArgumentList $cmd -ComputerName $Computer -ErrorAction stop).processid
+                }
+                Catch {
+                    #If we didn't run netstat, break everything off
+                    Throw $_
+                    Break
+                }
 
-                    #wait for process to complete
-                        while (
-                            #This while should return true until the process completes
-                                $(
-                                    try{
-                                        get-process -id $processid -computername $Computer -ErrorAction Stop
-                                    }
-                                    catch{
-                                        $FALSE
-                                    }
-                                )
-                        ) {
-                            start-sleep -seconds 2 
+                #wait for process to complete
+                while (
+                    #This while should return true until the process completes
+                    $(
+                        try {
+                            get-process -id $processid -computername $Computer -ErrorAction Stop
                         }
+                        catch {
+                            $FALSE
+                        }
+                    )
+                ) {
+                    start-sleep -seconds 2 
+                }
             
-                    #gather results
-                        if(test-path $remoteTempFile){
+                #gather results
+                if (test-path $remoteTempFile) {
                     
-                            Try {
-                                $results = Get-Content $remoteTempFile | Select-String -Pattern '\s+(TCP|UDP)'
-                            }
-                            Catch {
-                                Throw "Could not get content from $remoteTempFile for results"
-                                Break
-                            }
+                    Try {
+                        $results = Get-Content $remoteTempFile | Select-String -Pattern '\s+(TCP|UDP)'
+                    }
+                    Catch {
+                        Throw "Could not get content from $remoteTempFile for results"
+                        Break
+                    }
 
-                            Remove-Item $remoteTempFile -force
+                    Remove-Item $remoteTempFile -force
 
-                        }
-                        else{
-                            Throw "'$tempFile' on $Computer converted to '$remoteTempFile'.  This path is not accessible from your system."
-                            Break
-                        }
                 }
-                else{
-                    #gather results on local PC
-                        $results = netstat -ano | Select-String -Pattern '\s+(TCP|UDP)'
+                else {
+                    Throw "'$tempFile' on $Computer converted to '$remoteTempFile'.  This path is not accessible from your system."
+                    Break
                 }
+            }
+            else {
+                #gather results on local PC
+                $results = netstat -ano | Select-String -Pattern '\s+(TCP|UDP)'
+            }
 
             #initialize counter for progress
-                $totalCount = $results.count
-                $count = 0
+            $totalCount = $results.count
+            $count = 0
     
             #Loop through each line of results    
-	            foreach($result in $results) {
+            foreach ($result in $results) {
             
-    	            $item = $result.line.split(' ',[System.StringSplitOptions]::RemoveEmptyEntries)
+                $item = $result.line.split(' ', [System.StringSplitOptions]::RemoveEmptyEntries)
     
-    	            if($item[1] -notmatch '^\[::'){
+                if ($item[1] -notmatch '^\[::') {
                     
-                        #parse the netstat line for local address and port
-    	                    if (($la = $item[1] -as [ipaddress]).AddressFamily -eq 'InterNetworkV6'){
-    	                        $localAddress = $la.IPAddressToString
-    	                        $localPort = $item[1].split('\]:')[-1]
-    	                    }
-    	                    else {
-    	                        $localAddress = $item[1].split(':')[0]
-    	                        $localPort = $item[1].split(':')[-1]
-    	                    }
-                    
-                        #parse the netstat line for remote address and port
-    	                    if (($ra = $item[2] -as [ipaddress]).AddressFamily -eq 'InterNetworkV6'){
-    	                        $remoteAddress = $ra.IPAddressToString
-    	                        $remotePort = $item[2].split('\]:')[-1]
-    	                    }
-    	                    else {
-    	                        $remoteAddress = $item[2].split(':')[0]
-    	                        $remotePort = $item[2].split(':')[-1]
-    	                    }
-
-                        #Filter IPv4/IPv6 if specified
-                            if($AddressFamily -ne "*")
-                            {
-                                if($AddressFamily -eq 'IPv4' -and $localAddress -match ':' -and $remoteAddress -match ':|\*' )
-                                {
-                                    #Both are IPv6, or ipv6 and listening, skip
-                                    Write-Verbose "Filtered by AddressFamily:`n$result"
-                                    continue
-                                }
-                                elseif($AddressFamily -eq 'IPv6' -and $localAddress -notmatch ':' -and ( $remoteAddress -notmatch ':' -or $remoteAddress -match '*' ) )
-                                {
-                                    #Both are IPv4, or ipv4 and listening, skip
-                                    Write-Verbose "Filtered by AddressFamily:`n$result"
-                                    continue
-                                }
-                            }
-    	    		
-                        #parse the netstat line for other properties
-    	    		        $procId = $item[-1]
-    	    		        $proto = $item[0]
-    	    		        $status = if($item[0] -eq 'tcp') {$item[3]} else {$null}	
-
-                        #Filter the object
-		    		        if($remotePort -notlike $Port -and $localPort -notlike $Port){
-                                write-verbose "remote $Remoteport local $localport port $port"
-                                Write-Verbose "Filtered by Port:`n$result"
-                                continue
-		    		        }
-
-		    		        if($remoteAddress -notlike $Address -and $localAddress -notlike $Address){
-                                Write-Verbose "Filtered by Address:`n$result"
-                                continue
-		    		        }
-    	    			     
-    	    			    if($status -notlike $State){
-                                Write-Verbose "Filtered by State:`n$result"
-                                continue
-		    		        }
-
-    	    			    if($proto -notlike $Protocol){
-                                Write-Verbose "Filtered by Protocol:`n$result"
-                                continue
-		    		        }
-                   
-                        #Display progress bar prior to getting process name or host name
-                            Write-Progress  -Activity "Resolving host and process names"`
-                                -Status "Resolving process ID $procId with remote address $remoteAddress and local address $localAddress"`
-                                -PercentComplete (( $count / $totalCount ) * 100)
-    	    		
-                        #If we are running showprocessnames, get the matching name
-                            if($ShowProcessNames -or $PSBoundParameters.ContainsKey -eq 'ProcessName'){
-                        
-                                #handle case where process spun up in the time between running get-process and running netstat
-                                if($procName = $processes | Where-Object {$_.id -eq $procId} | Select-Object -ExpandProperty name ){ }
-                                else {$procName = "Unknown"}
-
-                            }
-                            else{$procName = "NA"}
-
-		    		        if($procName -notlike $ProcessName){
-                                Write-Verbose "Filtered by ProcessName:`n$result"
-                                continue
-		    		        }
-    	    						
-                        #if the showhostnames switch is specified, try to map IP to hostname
-                            if($showHostnames){
-                                $tmpAddress = $null
-                                try{
-                                    if($remoteAddress -eq "127.0.0.1" -or $remoteAddress -eq "0.0.0.0"){
-                                        $remoteAddress = $Computer
-                                    }
-                                    elseif($remoteAddress -match "\w"){
-                                        
-                                        #check with dns cache first
-                                            if ($dnsCache.containskey( $remoteAddress)) {
-                                                $remoteAddress = $dnsCache[$remoteAddress]
-                                                write-verbose "using cached REMOTE '$remoteAddress'"
-                                            }
-                                            else{
-                                                #if address isn't in the cache, resolve it and add it
-                                                    $tmpAddress = $remoteAddress
-                                                    $remoteAddress = [System.Net.DNS]::GetHostByAddress("$remoteAddress").hostname
-                                                    $dnsCache.add($tmpAddress, $remoteAddress)
-                                                    write-verbose "using non cached REMOTE '$remoteAddress`t$tmpAddress"
-                                            }
-                                    }
-                                }
-                                catch{ }
-
-                                try{
-
-                                    if($localAddress -eq "127.0.0.1" -or $localAddress -eq "0.0.0.0"){
-                                        $localAddress = $Computer
-                                    }
-                                    elseif($localAddress -match "\w"){
-                                        #check with dns cache first
-                                            if($dnsCache.containskey($localAddress)){
-                                                $localAddress = $dnsCache[$localAddress]
-                                                write-verbose "using cached LOCAL '$localAddress'"
-                                            }
-                                            else{
-                                                #if address isn't in the cache, resolve it and add it
-                                                    $tmpAddress = $localAddress
-                                                    $localAddress = [System.Net.DNS]::GetHostByAddress("$localAddress").hostname
-                                                    $dnsCache.add($localAddress, $tmpAddress)
-                                                    write-verbose "using non cached LOCAL '$localAddress'`t'$tmpAddress'"
-                                            }
-                                    }
-                                }
-                                catch{ }
-                            }
-    
-    	    		    #Write the object	
-    	    		        New-Object -TypeName PSObject -Property @{
-		    		            ComputerName = $Computer
-                                PID = $procId
-		    		            ProcessName = $procName
-		    		            Protocol = $proto
-		    		            LocalAddress = $localAddress
-		    		            LocalPort = $localPort
-		    		            RemoteAddress =$remoteAddress
-		    		            RemotePort = $remotePort
-		    		            State = $status
-		    	            } | Select-Object -Property $properties								
-
-                        #Increment the progress counter
-                            $count++
+                    #parse the netstat line for local address and port
+                    if (($la = $item[1] -as [ipaddress]).AddressFamily -eq 'InterNetworkV6') {
+                        $localAddress = $la.IPAddressToString
+                        $localPort = $item[1].split('\]:')[-1]
                     }
+                    else {
+                        $localAddress = $item[1].split(':')[0]
+                        $localPort = $item[1].split(':')[-1]
+                    }
+                    
+                    #parse the netstat line for remote address and port
+                    if (($ra = $item[2] -as [ipaddress]).AddressFamily -eq 'InterNetworkV6') {
+                        $remoteAddress = $ra.IPAddressToString
+                        $remotePort = $item[2].split('\]:')[-1]
+                    }
+                    else {
+                        $remoteAddress = $item[2].split(':')[0]
+                        $remotePort = $item[2].split(':')[-1]
+                    }
+
+                    #Filter IPv4/IPv6 if specified
+                    if ($AddressFamily -ne "*") {
+                        if ($AddressFamily -eq 'IPv4' -and $localAddress -match ':' -and $remoteAddress -match ':|\*' ) {
+                            #Both are IPv6, or ipv6 and listening, skip
+                            Write-Verbose "Filtered by AddressFamily:`n$result"
+                            continue
+                        }
+                        elseif ($AddressFamily -eq 'IPv6' -and $localAddress -notmatch ':' -and ( $remoteAddress -notmatch ':' -or $remoteAddress -match '*' ) ) {
+                            #Both are IPv4, or ipv4 and listening, skip
+                            Write-Verbose "Filtered by AddressFamily:`n$result"
+                            continue
+                        }
+                    }
+    	    		
+                    #parse the netstat line for other properties
+                    $procId = $item[-1]
+                    $proto = $item[0]
+                    $status = if ($item[0] -eq 'tcp') {$item[3]} else {$null}	
+
+                    #Filter the object
+                    if ($remotePort -notlike $Port -and $localPort -notlike $Port) {
+                        write-verbose "remote $Remoteport local $localport port $port"
+                        Write-Verbose "Filtered by Port:`n$result"
+                        continue
+                    }
+
+                    if ($remoteAddress -notlike $Address -and $localAddress -notlike $Address) {
+                        Write-Verbose "Filtered by Address:`n$result"
+                        continue
+                    }
+    	    			     
+                    if ($status -notlike $State) {
+                        Write-Verbose "Filtered by State:`n$result"
+                        continue
+                    }
+
+                    if ($proto -notlike $Protocol) {
+                        Write-Verbose "Filtered by Protocol:`n$result"
+                        continue
+                    }
+                   
+                    #Display progress bar prior to getting process name or host name
+                    Write-Progress  -Activity "Resolving host and process names"`
+                        -Status "Resolving process ID $procId with remote address $remoteAddress and local address $localAddress"`
+                        -PercentComplete (( $count / $totalCount ) * 100)
+    	    		
+                    #If we are running showprocessnames, get the matching name
+                    if ($ShowProcessNames -or $PSBoundParameters.ContainsKey -eq 'ProcessName') {
+                        
+                        #handle case where process spun up in the time between running get-process and running netstat
+                        if ($procName = $processes | Where-Object {$_.id -eq $procId} | Select-Object -ExpandProperty name ) { }
+                        else {$procName = "Unknown"}
+
+                    }
+                    else {$procName = "NA"}
+
+                    if ($procName -notlike $ProcessName) {
+                        Write-Verbose "Filtered by ProcessName:`n$result"
+                        continue
+                    }
+    	    						
+                    #if the showhostnames switch is specified, try to map IP to hostname
+                    if ($showHostnames) {
+                        $tmpAddress = $null
+                        try {
+                            if ($remoteAddress -eq "127.0.0.1" -or $remoteAddress -eq "0.0.0.0") {
+                                $remoteAddress = $Computer
+                            }
+                            elseif ($remoteAddress -match "\w") {
+                                        
+                                #check with dns cache first
+                                if ($dnsCache.containskey( $remoteAddress)) {
+                                    $remoteAddress = $dnsCache[$remoteAddress]
+                                    write-verbose "using cached REMOTE '$remoteAddress'"
+                                }
+                                else {
+                                    #if address isn't in the cache, resolve it and add it
+                                    $tmpAddress = $remoteAddress
+                                    $remoteAddress = [System.Net.DNS]::GetHostByAddress("$remoteAddress").hostname
+                                    $dnsCache.add($tmpAddress, $remoteAddress)
+                                    write-verbose "using non cached REMOTE '$remoteAddress`t$tmpAddress"
+                                }
+                            }
+                        }
+                        catch { }
+
+                        try {
+
+                            if ($localAddress -eq "127.0.0.1" -or $localAddress -eq "0.0.0.0") {
+                                $localAddress = $Computer
+                            }
+                            elseif ($localAddress -match "\w") {
+                                #check with dns cache first
+                                if ($dnsCache.containskey($localAddress)) {
+                                    $localAddress = $dnsCache[$localAddress]
+                                    write-verbose "using cached LOCAL '$localAddress'"
+                                }
+                                else {
+                                    #if address isn't in the cache, resolve it and add it
+                                    $tmpAddress = $localAddress
+                                    $localAddress = [System.Net.DNS]::GetHostByAddress("$localAddress").hostname
+                                    $dnsCache.add($localAddress, $tmpAddress)
+                                    write-verbose "using non cached LOCAL '$localAddress'`t'$tmpAddress'"
+                                }
+                            }
+                        }
+                        catch { }
+                    }
+    
+                    #Write the object	
+                    New-Object -TypeName PSObject -Property @{
+                        ComputerName  = $Computer
+                        PID           = $procId
+                        ProcessName   = $procName
+                        Protocol      = $proto
+                        LocalAddress  = $localAddress
+                        LocalPort     = $localPort
+                        RemoteAddress = $remoteAddress
+                        RemotePort    = $remotePort
+                        State         = $status
+                    } | Select-Object -Property $properties								
+
+                    #Increment the progress counter
+                    $count++
                 }
+            }
         }
-    }}
+    }
+}
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -2520,13 +2516,13 @@ Function Find-ComputersFiles {
     <#
         .SYNOPSIS
         By Taylor Lee
-        Modified 06232018
+        Modified 06282018
           
         .DESCRIPTION
         Discover queried files meeting a specific search parameter and output the findings to a spreadsheet.
           
         .INPUTS
-           
+        [CmdletBinding()]   
             Param (
                 #Variable containing computers being queried
                 [Parameter(Position=0, Mandatory = $true)]$computers,
@@ -2535,7 +2531,7 @@ Function Find-ComputersFiles {
                 #Variable specifying search parameter
                 [Parameter(Position=2, Mandatory = $true)]$include,
                 #Variable specifying search parameter
-                [Parameter(Position=3)]$subfolder
+                [Parameter(Position=3)]$Path = "c$"
                 )
     
             #Supress Errors
@@ -2543,9 +2539,9 @@ Function Find-ComputersFiles {
     
             #Runs to find all files that match the query on all included computers and outputs the results to a CSV
             Get-Content $computers |
-            ForEach-Object{Get-ChildItem "\\$_\c$\$subfolders" -Include $include -Recurse} |
+            ForEach-Object{Get-ChildItem "\\$_\$path" -Include $include -Recurse} |
             Select-Object Name,Directory,Length,LastAccessTime,LastWriteTime,CreationTime |
-            Export-Csv $csvout -Append
+            Export-Csv $csvout -Append -NoTypeInformation
     
             #Restores default error action of show
             $ErrorActionPreference = 'Continue'
@@ -2557,36 +2553,36 @@ Function Find-ComputersFiles {
         (Computers should be seperated by line) 
                 
         .EXAMPLE
-        find-computersfiles -computers C:\computers.txt -csvout c:\results.csv -include *.pst -subfolder "users\username\appdata\local"
+        find-computersfiles -computers C:\computers.txt -csvout c:\results.csv -include *.pst -path "c$\users\username\appdata\local"
 
-        Performs the same function as the first example, except it only searches the specified subfolder instead of the C: drive.
+        Performs the same function as the first example, except it only searches the specified subfolder instead of the full C$ share.
     
     #>
     
-               
-            Param (
-                #Variable containing computers being queried
-                [Parameter(Position=0, Mandatory = $true)]$computers,
-                #Variable containing output path for csv file
-                [Parameter(Position=1, Mandatory = $true)]$csvout,
-                #Variable specifying search parameter
-                [Parameter(Position=2, Mandatory = $true)]$include,
-                #Variable specifying search parameter
-                [Parameter(Position=3)]$subfolder
-                )
+    [CmdletBinding()]   
+    Param (
+        #Variable containing computers being queried
+        [Parameter(Position = 0, Mandatory = $true)]$computers,
+        #Variable containing output path for csv file
+        [Parameter(Position = 1, Mandatory = $true)]$csvout,
+        #Variable specifying search parameter
+        [Parameter(Position = 2, Mandatory = $true)]$include,
+        #Variable specifying search parameter
+        [Parameter(Position = 3)]$Path = "c$"
+    )
     
-            #Supress Errors
-            $ErrorActionPreference = 'SilentlyContinue'
+    #Supress Errors
+    $ErrorActionPreference = 'SilentlyContinue'
     
-            #Runs to find all files that match the query on all included computers and outputs the results to a CSV
-            Get-Content $computers |
-            ForEach-Object{Get-ChildItem "\\$_\c$\$subfolders" -Include $include -Recurse} |
-            Select-Object Name,Directory,Length,LastAccessTime,LastWriteTime,CreationTime |
-            Export-Csv $csvout -Append
+    #Runs to find all files that match the query on all included computers and outputs the results to a CSV
+    Get-Content $computers |
+        ForEach-Object {Get-ChildItem "\\$_\$path" -Include $include -Recurse} |
+        Select-Object Name, Directory, Length, LastAccessTime, LastWriteTime, CreationTime |
+        Export-Csv $csvout -Append -NoTypeInformation
     
-            #Restores default error action of show
-            $ErrorActionPreference = 'Continue'
-                           }
+    #Restores default error action of show
+    $ErrorActionPreference = 'Continue'
+}
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -2601,7 +2597,7 @@ Function Get-FolderSize {
     Quckly Finds the size of a single folder
         
     .INPUTS
-       
+    [CmdletBinding()]   
     Param (
         [Parameter(Position=0, Mandatory = $true)]$Folder,
         [Parameter(Position=1)]$ByteSize
@@ -2635,7 +2631,7 @@ Function Get-FolderSize {
     
     #>
         
-       
+    [CmdletBinding()]   
     Param (
         [Parameter(Position = 0, Mandatory = $true)]$Folder,
         [Parameter(Position = 1)]$ByteSize
@@ -2655,3 +2651,112 @@ Function Get-FolderSize {
     }
 }
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Function Get-PublicIP {
+
+    <#
+    .SYNOPSIS
+    By Taylor Lee
+    Modified 06282018
+      
+    .DESCRIPTION
+    Returns WhoIS public IP info for your location or an specified public IP
+      
+    .INPUTS
+    [CmdletBinding()]   
+    Param (
+      [Parameter(Position=0)]$IP
+          )
+
+    $ipinfo = Invoke-RestMethod http://ipinfo.io/$IP 
+    $PublicIP = @{
+        IP       = $ipinfo.ip 
+        Hostname = $ipinfo.hostname 
+        City     = $ipinfo.city 
+        Region   = $ipinfo.region 
+        country  = $ipinfo.country 
+        loc      = $ipinfo.loc 
+        org      = $ipinfo.org
+        Phone    = $ipinfo.phone
+    } 
+    $PublicIP.getenumerator() | Sort-Object -property name  
+      
+    
+        
+    .EXAMPLE
+    Get-PublicIP
+
+    Returns your Public IP Info
+
+    .Example
+    Get-PublicIP -IP 8.8.8.8
+
+    Returns Public IP Info for Google
+    #>
+
+    [CmdletBinding()]   
+    Param (
+        [Parameter(Position = 0)]$IP
+    )
+
+    $ipinfo = Invoke-RestMethod http://ipinfo.io/$IP 
+    $PublicIP = @{
+        IP       = $ipinfo.ip 
+        Hostname = $ipinfo.hostname 
+        City     = $ipinfo.city 
+        Region   = $ipinfo.region 
+        country  = $ipinfo.country 
+        loc      = $ipinfo.loc 
+        org      = $ipinfo.org
+        Phone    = $ipinfo.phone
+    } 
+    $PublicIP.getenumerator() | Sort-Object -property name   
+
+}
+#-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Function Get-EndpointReport {
+
+    <#
+    .SYNOPSIS
+    By Taylor Lee
+    Modified 06292018
+    
+    .DESCRIPTION
+    Create a CSV report of Active Directory Endpoints
+    
+    
+    .INPUTS
+    [CmdletBinding()]
+          
+    Param (
+        [Parameter(Mandatory = $true)]$Path
+    )
+    
+    Import-Module ActiveDirectory 
+    
+    Get-ADComputer -Filter {(Enabled -eq $true)} -properties * | 
+        select-object name,OperatingSystem,whenCreated,LastLogonDate | 
+        Export-CSV $Path -NoTypeInformation
+    
+    .NOTES
+    Requires Active Directory Module
+
+    .Examples
+    -path is where the report is to be saved. Be sure to specify a filename and extension.
+
+    Get-EndpointReport -path C:\UserReport.csv
+    #>
+    [CmdletBinding()]
+          
+    Param (
+        [Parameter(Mandatory = $true)]$Path
+    )
+    
+    Import-Module ActiveDirectory 
+    
+    Get-ADComputer -Filter {(Enabled -eq $true)} -properties * | 
+        select-object name,OperatingSystem,whenCreated,LastLogonDate | 
+        Export-CSV $Path -NoTypeInformation
+    
+}
